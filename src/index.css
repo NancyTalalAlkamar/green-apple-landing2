@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ───────────── Design tokens (from the Figma file) ───────────── */
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
+
+  /* Deep forest greens — dark sections, footer, headings */
+  --color-forest-950: #102219;
+  --color-forest-900: #14291f;
+  --color-forest-800: #193327;
+  --color-forest-700: #22402f;
+  --color-forest-600: #2f5240;
+
+  /* Copper / cinnamon — primary CTA + accent words */
+  --color-copper-700: #763a1c;
+  --color-copper-600: #8c4724;
+  --color-copper-500: #a4582f;
+  --color-copper-300: #d9a06a; /* light accent on dark backgrounds */
+
+  /* Soft sage surfaces */
+  --color-sage-50: #f4f7f5;
+  --color-sage-100: #eaf0ec;
+  --color-sage-200: #dbe5de;
+
+  /* Warm sand — results / booking backgrounds */
+  --color-sand-50: #faf6f1;
+  --color-sand-100: #f3ebe1;
+  --color-sand-200: #e8d9c6;
+
+  --color-ink: #1b2a22;
+  --color-muted: #5d6a62;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-copper-600 text-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+  .glass-dark {
+    @apply border border-white/15 bg-forest-900/45 backdrop-blur-md;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* إضافة فاصل بصري ناعم وانسيابي بين الأقسام */
+section {
+  position: relative;
+}
+
+/* تأثير خطوط خفيفة أو إضاءات خافتة تفصل بين الأقسام إذا أردتِ فخامة إضافية */
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+/* تعريف حركة النبض والتوهج الخفيف */
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(198, 110, 60, 0.2);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 12px rgba(198, 110, 60, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(198, 110, 60, 0);
+  }
+}
+
+/* كلاس جاهز تضعينه لأي كرت تريدين أن ينبض بلطف */
+.pulse-card {
+  animation: subtlePulse 3s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.pulse-card:hover {
+  transform: translateY(-4px) scale(1.01);
+}
