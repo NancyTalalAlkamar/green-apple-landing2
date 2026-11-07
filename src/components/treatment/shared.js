@@ -34,8 +34,13 @@ export function useMedia(query) {
     const mq = window.matchMedia(query)
     const onChange = () => setMatch(mq.matches)
     onChange()
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
+    // سفاري القديم ما بيعرف addEventListener هون، فمنستعمل addListener
+    if (mq.addEventListener) {
+      mq.addEventListener('change', onChange)
+      return () => mq.removeEventListener('change', onChange)
+    }
+    mq.addListener(onChange)
+    return () => mq.removeListener(onChange)
   }, [query])
   return match
 }
