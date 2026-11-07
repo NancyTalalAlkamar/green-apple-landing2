@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
-import { cta as originalCta } from '../data/content'
+import { cta as originalCta, bookingUrl } from '../data/content'
 import { useLanguage } from '../context/LanguageContext'
 import Button from '../components/ui/Button'
 
@@ -10,9 +10,9 @@ const ctaEn = {
   accent: 'Book Your Consultation in a Minute',
   steps: [
     'Choose the service',
-    'Choose an available time',
-    'Confirm your number with a code',
-    'Confirm on WhatsApp',
+    'Message us on WhatsApp',
+    'We arrange the time with you',
+    'Confirmation on WhatsApp',
   ],
   note: 'Initial consultation takes 2-3 hours with clinic management',
   button: 'Book Consultation Now',
@@ -147,7 +147,7 @@ export default function CTA() {
 
           <div className="relative grid items-center gap-10 p-6 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:p-12">
             
-            {/* النصوص والعنوان والخطوات - تظهر بشكل ثابت وثابت تماماً */}
+            {/* النصوص والعنوان والخطوات */}
             <div className="space-y-6">
               <h2 className={`text-3xl leading-snug font-bold text-white sm:text-4xl lg:text-[2.6rem] ${isEn ? 'text-left' : 'text-right'}`}>
                 {ctaData.title}
@@ -174,7 +174,7 @@ export default function CTA() {
 
               <div className={`flex flex-col gap-4 ${isEn ? 'items-start text-left' : 'items-start text-right'}`}>
                 <p className="text-sm text-white/85">{ctaData.note}</p>
-                <Button href="#cta" size="lg">
+                <Button href={bookingUrl(isEn ? 'en' : 'ar')} target="_blank" rel="noreferrer" size="lg">
                   {ctaData.button}
                 </Button>
               </div>

@@ -11,19 +11,18 @@ export const translations = {
     langName: 'English',
     nav: {
       links: [
-        { label: 'Treatments', href: '#treatments' },
-        { label: 'Program', href: '#program' },
-        { label: 'Results', href: '#results' },
-        { label: 'Offers', href: '#offers' },
+        { label: 'Treatments', href: '#services' },
+        { label: 'Program', href: '#journey' },
+        { label: 'FAQ', href: '#faq' },
         { label: 'Contact Us', href: '#contact' },
       ],
       login: 'Login',
       cta: 'Book Consultation',
     },
     hero: {
-      badge: 'Latest Global Technologies',
-      title: 'Advanced & Custom Devices Fast & Safe Results',
-      subtitle: 'We use the best globally certified technologies for body sculpting and skincare without surgery.',
+      badge: 'Devices & Technology',
+      title: 'Non-surgical devices chosen for your plan',
+      subtitle: 'We choose the device and the number of sessions after your assessment, and track progress with consistent measurements.',
       primaryBtn: 'Book Your Session',
       secondaryBtn: 'View Treatments',
     }

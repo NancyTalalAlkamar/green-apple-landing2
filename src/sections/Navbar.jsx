@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
-import { Globe, ChevronDown, UserRound, Menu, X } from 'lucide-react'
+import { Globe, ChevronDown, Menu, X } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import { nav as originalNav } from '../data/content'
+import { nav as originalNav, bookingUrl } from '../data/content'
 import { EASE } from '../lib/motion'
 import Button from '../components/ui/Button'
 
@@ -17,8 +17,11 @@ export default function Navbar() {
 
   // إذا كانت اللغة إنجليزية نأخذ الترجمة، وإذا كانت عربية نأخذ ملفك الأصلي كما هو
   const navLinks = lang === 'en' ? t.nav.links : originalNav.links
-  const loginText = lang === 'en' ? t.nav.login : originalNav.login
   const ctaText = lang === 'en' ? t.nav.cta : originalNav.cta
+
+  // بصفحات العلاجات، روابط الأقسام بترجع للرئيسية (مثلاً /#faq)
+  const onHome = window.location.pathname === '/'
+  const linkHref = (h) => (onHome || !h.startsWith('#') ? h : `/${h}`)
 
   return (
     <>
@@ -45,7 +48,7 @@ export default function Navbar() {
             className="flex items-center justify-between gap-4 rounded-full border border-white/15 px-3 shadow-xl shadow-black/10 backdrop-blur-xl sm:px-4"
           >
             {/* Logo */}
-            <a href="#top" className="flex items-center gap-2 ps-2">
+            <a href={onHome ? '#top' : '/'} className="flex items-center gap-2 ps-2">
               <img src="/images/logo-mark-white.png" alt="" className="h-8 w-auto" />
               <span className="text-lg font-bold whitespace-nowrap text-white" dir="ltr">
                 Green Apple
@@ -57,7 +60,7 @@ export default function Navbar() {
               {navLinks.map((l) => (
                 <li key={l.href}>
                   <a
-                    href={l.href}
+                    href={linkHref(l.href)}
                     className="group relative text-sm text-white/85 transition-colors hover:text-white"
                   >
                     {l.label}
@@ -105,11 +108,8 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              <a href="#" className="hidden items-center gap-1.5 text-sm text-white/85 hover:text-white md:flex">
-                <UserRound className="size-4" />
-                {loginText}
-              </a>
-              <Button href="#cta" size="sm" className="hidden sm:inline-flex">
+              {/* زر "دخول" مخفي لحد ما تجهز منطقة المريضات وتكون محمية */}
+              <Button href={bookingUrl(lang)} target="_blank" rel="noreferrer" size="sm" className="hidden sm:inline-flex">
                 {ctaText}
               </Button>
               <button
@@ -142,7 +142,7 @@ export default function Navbar() {
                       transition={{ delay: 0.04 * i }}
                     >
                       <a
-                        href={l.href}
+                        href={linkHref(l.href)}
                         onClick={() => setOpen(false)}
                         className="block rounded-xl px-3 py-3 text-white/90 hover:bg-white/10"
                       >
@@ -152,7 +152,7 @@ export default function Navbar() {
                   ))}
                 </ul>
                 <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-3">
-                  <Button href="#cta" size="sm" className="flex-1" onClick={() => setOpen(false)}>
+                  <Button href={bookingUrl(lang)} target="_blank" rel="noreferrer" size="sm" className="flex-1" onClick={() => setOpen(false)}>
                     {ctaText}
                   </Button>
                   <div className="flex gap-2">

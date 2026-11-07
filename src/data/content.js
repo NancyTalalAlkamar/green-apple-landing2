@@ -5,8 +5,7 @@ export const nav = {
   links: [
     { label: 'العلاجات', href: '#services' },
     { label: 'البرنامج', href: '#journey' },
-    { label: 'النتائج', href: '#results' },
-    { label: 'العروض', href: '#booking' },
+    { label: 'الأسئلة الشائعة', href: '#faq' },
     { label: 'تواصل معنا', href: '#contact' },
   ],
   login: 'دخول',
@@ -34,15 +33,17 @@ export const services = {
     title: 'البطن والخصر',
     text: 'برنامج يركّز على محيط البطن والخصر بعد تقييم حالتك.',
     image: '/images/room-abdomen.webp',
+    href: '/treatments/abdomen',
   },
   items: [
-    { title: 'الفخذين والذراعين', text: 'حسب المنطقة التي تحدّدينها.', image: '/images/room-thighs.webp' },
-    { title: 'السيلوليت والترهل', text: 'حسب هدفك، بعد التقييم.', image: '/images/room-cellulite.webp' },
+    { title: 'الفخذين والذراعين', text: 'حسب المنطقة التي تحدّدينها.', image: '/images/room-thighs.webp', href: '/treatments/thighs-arms' },
+    { title: 'السيلوليت والترهل', text: 'حسب هدفك، بعد التقييم.', image: '/images/room-cellulite.webp', href: '/treatments/cellulite' },
   ],
   other: {
     title: 'خدمات أخرى',
     text: 'مسارات منفصلة وواضحة.',
     tags: ['الليزر', 'العناية بالبشرة'],
+    links: ['/treatments/laser', '/treatments/skin'],
   },
 }
 
@@ -161,7 +162,7 @@ export const faq = {
 export const cta = {
   title: 'جاهزة تبدئي؟',
   accent: 'احجزي استشارتك بدقيقة',
-  steps: ['اختاري الخدمة', 'اختاري وقتاً متاحاً', 'أكّدي رقمك برمز', 'التأكيد على WhatsApp'],
+  steps: ['اختاري الخدمة', 'ابعتيلنا على WhatsApp', 'منرتّب معك الموعد', 'التأكيد على WhatsApp'],
   note: 'الاستشارة 2–3 ساعات مع إدارة العيادة',
   button: 'احجزي استشارة الآن',
   form: {
@@ -206,3 +207,15 @@ export const footer = {
 }
 
 export const WHATSAPP_URL = 'https://wa.me/972592373805'
+
+// ⚠️ الرقم لسا بانتظار تأكيد العيادة — لما يتأكد غيّريه هون وبالسطر اللي فوق.
+export const PHONE = { label: '0592373805', href: 'tel:0592373805' }
+
+// لحد ما يجهز نظام الحجز: أزرار الحجز بتفتح WhatsApp برسالة جاهزة بلغة الصفحة
+const BOOKING_TEXT = {
+  ar: 'مرحبا، بدي أحجز استشارة',
+  en: 'Hi, I would like to book a consultation',
+  he: 'שלום, אני רוצה לקבוע ייעוץ',
+}
+export const bookingUrl = (lang = 'ar') =>
+  `${WHATSAPP_URL}?text=${encodeURIComponent(BOOKING_TEXT[lang] || BOOKING_TEXT.ar)}`

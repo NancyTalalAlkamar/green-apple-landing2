@@ -19,12 +19,11 @@ function ArrowCircle({ large, isEn }) {
   )
 }
 
-function ServiceCard({ title, text, image, large = false, className = '', isEn = false }) {
-  return (
+function ServiceCard({ title, text, image, href = '#cta', large = false, className = '', isEn = false }) {  return (
     <Reveal.Item
       variants={scaleIn}
       as="a"
-      href="#cta"
+           href={href}
       className={`group relative block overflow-hidden rounded-4xl ${className}`}
     >
       <img
@@ -67,11 +66,11 @@ export default function Services() {
 
   const items = originalServices.items.map((item, index) => {
     if (isEn) {
-      if (index === 0) {
-        return { ...item, title: 'Cellulite & Sagging', text: 'Based on your goal, after assessment.' }
+         if (index === 0) {
+        return { ...item, title: 'Thighs & Arms', text: 'According to the area you choose.' }
       }
       if (index === 1) {
-        return { ...item, title: 'Thighs & Arms', text: 'According to the area you choose.' }
+        return { ...item, title: 'Cellulite & Sagging', text: 'Based on your goal, after assessment.' }
       }
     }
     return item
@@ -80,7 +79,8 @@ export default function Services() {
   const other = {
     title: isEn ? 'Other Services' : originalServices.other.title,
     text: isEn ? 'Detailed & clear treatment pathways' : originalServices.other.text,
-    tags: isEn ? ['Skin Care', 'Laser'] : originalServices.other.tags,
+        tags: isEn ? ['Laser', 'Skin Care'] : originalServices.other.tags,
+    links: originalServices.other.links,
   }
 
   const TagArrow = isEn ? ArrowRight : ArrowLeft
@@ -124,10 +124,10 @@ export default function Services() {
               <p className="mt-2 text-sm text-white/70">{other.text}</p>
             </div>
             <div className="relative flex flex-wrap gap-2">
-              {other.tags.map((t) => (
+                           {other.tags.map((t, i) => (
                 <a
                   key={t}
-                  href="#cta"
+                                    href={other.links?.[i] || '#cta'}
                   className="group inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-white hover:text-forest-800"
                 >
                   {t}

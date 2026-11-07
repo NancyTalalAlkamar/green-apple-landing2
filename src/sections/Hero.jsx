@@ -11,7 +11,7 @@ import {
   useTransform,
 } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
-import { hero } from '../data/content'
+import { hero, bookingUrl } from '../data/content'
 import { useLanguage } from '../context/LanguageContext'
 import Button from '../components/ui/Button'
 
@@ -62,10 +62,10 @@ const getSlides = (lang) => {
       {
         label: 'Technology',
         image: '/images/room-cellulite.webp',
-        eyebrow: 'Latest Global Technologies',
-        title: ['Advanced & Custom Devices', 'Fast & Safe Results'],
-        text: 'We use the best globally certified technologies for body sculpting and skincare without surgery.',
-        chips: ['Globally Certified Tech', 'No Surgery & No Downtime'],
+        eyebrow: 'Devices & Technology',
+        title: ['Non-surgical devices', 'Chosen for your plan'],
+        text: 'We choose the device and the number of sessions after your assessment, and track progress with consistent measurements.',
+        chips: ['Chosen after assessment', 'Progress you can measure'],
         primary: { label: 'Book Your Session', href: '#cta' },
         secondary: { label: 'View Treatments', href: '#services' },
       },
@@ -77,7 +77,7 @@ const getSlides = (lang) => {
         text: 'Comprehensive session with the clinical team to assess your needs and build your bespoke plan.',
         chips: ['Expert Clinical Review', 'Tailored Strategy'],
         primary: { label: 'Book Consultation', href: '#cta' },
-        secondary: { label: 'Meet The Team', href: '#team' },
+        secondary: { label: 'View Treatments', href: '#services' },
       },
       {
         label: 'Tracking',
@@ -87,7 +87,7 @@ const getSlides = (lang) => {
         text: '3D body scan every 3 weeks measuring waist, abdomen, and thighs to track your exact numbers.',
         chips: ['3D Scan Every 3 Weeks', 'Clear Progress Reports'],
         primary: { label: 'Start Journey', href: '#cta' },
-        secondary: { label: 'See Results', href: '#results' },
+        secondary: { label: 'Our Journey', href: '#journey' },
       },
     ]
   }
@@ -107,10 +107,10 @@ const getSlides = (lang) => {
       {
         label: 'הטכנולוגיות',
         image: '/images/room-cellulite.webp',
-        eyebrow: 'הטכנולוגיות המתקדמות בעולם',
-        title: ['מכשירים מתקדמים ומותאמים', 'תוצאות מהירות ובטוחות'],
-        text: 'אנחנו משתמשים בטכנולוגיות הטובות ביותר, המאושרות בעולם, לעיצוב הגוף ולטיפוח העור, ללא ניתוח.',
-        chips: ['טכנולוגיות מאושרות בעולם', 'ללא ניתוח וללא תקופת החלמה'],
+        eyebrow: 'מכשירים וטכנולוגיה',
+        title: ['מכשירים לא ניתוחיים', 'שנבחרים לפי התוכנית שלך'],
+        text: 'אנחנו בוחרים את המכשיר ואת מספר הטיפולים אחרי ההערכה, ועוקבים אחרי ההתקדמות במדידות קבועות.',
+        chips: ['נבחר אחרי הערכה', 'התקדמות שאפשר למדוד'],
         primary: { label: 'לקביעת טיפול', href: '#cta' },
         secondary: { label: 'לטיפולים שלנו', href: '#services' },
       },
@@ -122,7 +122,7 @@ const getSlides = (lang) => {
         text: 'שעתיים עד שלוש שעות עם הנהלת הקליניקה, שבהן נכיר את המטרה שלך ונתעד את נקודת ההתחלה.',
         chips: ['ייעוץ עם הנהלת הקליניקה', 'תוכנית שנבנית סביב המטרה שלך'],
         primary: { label: 'לקביעת ייעוץ', href: '#cta' },
-        secondary: { label: 'הכירי את הצוות', href: '#team' },
+        secondary: { label: 'לטיפולים שלנו', href: '#services' },
       },
       {
         label: 'המעקב',
@@ -132,7 +132,7 @@ const getSlides = (lang) => {
         text: 'סריקת גוף תלת־ממדית כל 3 שבועות, שמודדת מותניים, בטן וישבן, כדי שתראי את ההבדל במספרים.',
         chips: ['סריקת 3D כל 3 שבועות', 'דוחות התקדמות ברורים'],
         primary: { label: 'להתחיל את הדרך', href: '#cta' },
-        secondary: { label: 'לתוצאות', href: '#results' },
+        secondary: { label: 'הדרך שלנו', href: '#journey' },
       },
     ]
   }
@@ -151,10 +151,10 @@ const getSlides = (lang) => {
     {
       label: 'التقنيات',
       image: '/images/room-cellulite.webp',
-      eyebrow: 'أحدث التقنيات العالمية',
-      title: ['أجهزة حديثة ومخصصة', 'نتائج سريعة وآمنة'],
-      text: 'نستخدم أفضل التقنيات المعتمدة عالمياً لنحت الجسم والعناية بالبشرة وبدون جراحة.',
-      chips: ['تقنيات معتمدة عالمياً', 'بدون جراحة وبدون فترة نقاهة'],
+      eyebrow: 'الأجهزة والتقنيات',
+      title: ['أجهزة غير جراحية', 'بنختارها حسب خطتك'],
+      text: 'منختار الجهاز وعدد الجلسات بعد التقييم، ومنتابع التقدّم بقياسات ثابتة.',
+      chips: ['اختيار حسب التقييم', 'تقدّم بتقدري تقيسيه'],
       primary: { label: 'احجزي جلستك', href: '#cta' },
       secondary: { label: 'شوفي العلاجات', href: '#services' },
     },
@@ -166,7 +166,7 @@ const getSlides = (lang) => {
       text: 'ساعتين لثلاث ساعات مع إدارة العيادة، نتعرّف فيها على هدفك ونوثّق نقطة البداية.',
       chips: ['استشارة مع إدارة العيادة', 'خطة مبنية على هدفك'],
       primary: { label: 'احجزي استشارتك', href: '#cta' },
-      secondary: { label: 'تعرّفي على الفريق', href: '#team' },
+      secondary: { label: 'شوفي العلاجات', href: '#services' },
     },
     {
       label: 'المتابعة',
@@ -176,7 +176,7 @@ const getSlides = (lang) => {
       text: 'مسح ثلاثي الأبعاد كل 3 أسابيع يقيس الخصر والبطن والأرداف، لتشوفي الفرق بالأرقام.',
       chips: ['مسح 3D كل 3 أسابيع', 'تقارير تقدّم واضحة'],
       primary: { label: 'ابدئي رحلتك', href: '#cta' },
-      secondary: { label: 'شوفي النتائج', href: '#results' },
+      secondary: { label: 'كيف يعمل البرنامج', href: '#journey' },
     },
   ]
 }
@@ -264,7 +264,7 @@ function Chip({ text, className, x }) {
   )
 }
 
-function Slide({ data, dir, isEn, imgX, imgY, bgY, contentY, contentOpacity }) {
+function Slide({ data, dir, isEn, lang, imgX, imgY, bgY, contentY, contentOpacity }) {
   const frame = getFrame(isEn)
   return (
     <motion.div
@@ -349,7 +349,7 @@ function Slide({ data, dir, isEn, imgX, imgY, bgY, contentY, contentOpacity }) {
         </motion.p>
 
         <motion.div {...rise(0.45)} className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <Button href={data.primary.href} size="lg">
+          <Button href={bookingUrl(lang)} target="_blank" rel="noreferrer" size="lg">
             {data.primary.label}
           </Button>
           <Button
@@ -432,14 +432,15 @@ function HeroSlider() {
       lang={isEn ? 'en' : isHe ? 'he' : 'ar'}
       aria-roledescription="carousel"
       onMouseMove={onMouseMove}
-      className="relative min-h-[700px] touch-pan-y overflow-hidden rounded-b-[3.5rem] bg-forest-950 outline-none select-none sm:min-h-[780px]"
+      className="relative min-h-[700px] touch-pan-y overflow-hidden rounded-b-[3.5rem] bg-sand-100 outline-none select-none sm:min-h-[780px]"
     >
-      <AnimatePresence initial custom={dir}>
+      <AnimatePresence initial={false} custom={dir}>
         <Slide
           key={`${lang}-${current}`}
           data={s}
           dir={dir}
           isEn={isEn}
+          lang={lang}
           imgX={imgX}
           imgY={imgY}
           bgY={bgY}
