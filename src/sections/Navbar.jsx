@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Globe, ChevronDown, Menu, X } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import { nav as originalNav, bookingUrl } from '../data/content'
+import { nav as originalNav } from '../data/content'
 import { EASE } from '../lib/motion'
 import Button from '../components/ui/Button'
 
@@ -16,10 +16,13 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, 'change', (y) => setScrolled(y > 40))
 
   // إذا كانت اللغة إنجليزية نأخذ الترجمة، وإذا كانت عربية نأخذ ملفك الأصلي كما هو
-  const navLinks = lang === 'en' ? t.nav.links : originalNav.links
+  // "تواصل معنا" بيفتح صفحة التواصل المنفصلة
+  const navLinks = (lang === 'en' ? t.nav.links : originalNav.links).map((l) =>
+    l.href === '#contact' ? { ...l, href: '/contact' } : l,
+  )
   const ctaText = lang === 'en' ? t.nav.cta : originalNav.cta
 
-  // بصفحات العلاجات، روابط الأقسام بترجع للرئيسية (مثلاً /#faq)
+  // بصفحات العلاجات، روابط الأقسام بترجع للرئيسية (مثلاً /#results)
   const onHome = window.location.pathname === '/'
   const linkHref = (h) => (onHome || !h.startsWith('#') ? h : `/${h}`)
 
@@ -109,9 +112,12 @@ export default function Navbar() {
               </div>
 
               {/* زر "دخول" مخفي لحد ما تجهز منطقة المريضات وتكون محمية */}
-              <Button href={bookingUrl(lang)} target="_blank" rel="noreferrer" size="sm" className="hidden sm:inline-flex">
-                {ctaText}
-              </Button>
+              {/* بالموبايل الزر مخفي (موجود بالشريط اللي تحت) عشان ما يركب على اللوغو */}
+              <span className="hidden sm:block">
+                <Button href="/contact" size="sm">
+                  {ctaText}
+                </Button>
+              </span>
               <button
                 onClick={() => setOpen((v) => !v)}
                 className="grid size-10 place-items-center rounded-full text-white hover:bg-white/10 lg:hidden"
@@ -152,7 +158,7 @@ export default function Navbar() {
                   ))}
                 </ul>
                 <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-3">
-                  <Button href={bookingUrl(lang)} target="_blank" rel="noreferrer" size="sm" className="flex-1" onClick={() => setOpen(false)}>
+                  <Button href="/contact" size="sm" className="flex-1" onClick={() => setOpen(false)}>
                     {ctaText}
                   </Button>
                   <div className="flex gap-2">
