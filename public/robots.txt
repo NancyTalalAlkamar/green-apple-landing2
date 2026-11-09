@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://green-apple-landing2-pps8.vercel.app/sitemap.xml
