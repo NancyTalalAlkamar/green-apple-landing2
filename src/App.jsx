@@ -16,6 +16,7 @@ import ContactPage from './pages/ContactPage'
 import AboutPage from './pages/AboutPage'
 import TreatmentsPage from './pages/TreatmentsPage'
 import OffersPage from './pages/OffersPage'
+import ResultsPage from './pages/ResultsPage'
 import MobileBar from './components/MobileBar'
 import DemoTag from './components/DemoTag'
 import { treatments } from './data/treatments'
@@ -35,6 +36,8 @@ const isAboutPage = /^\/about\/?$/.test(window.location.pathname)
 const isTreatmentsPage = /^\/treatments\/?$/.test(window.location.pathname)
 // صفحة العروض: /offers
 const isOffersPage = /^\/offers\/?$/.test(window.location.pathname)
+// صفحة النتائج: /results
+const isResultsPage = /^\/results\/?$/.test(window.location.pathname)
 
 // SEO: عنوان ووصف كل صفحة (اللي بيطلعوا بجوجل وبتبويب المتصفح)
 const SITE = 'Green Apple'
@@ -43,6 +46,12 @@ const HOME_DESC =
   'Green Apple — عيادة تنحيف ونحت جسم غير جراحي في سخنين. برنامج شخصي يبدأ باستشارة، مع خطة جلسات ومتابعة وقياسات ثابتة.'
 
 function getSeo(slug) {
+  if (isResultsPage) {
+    return {
+      title: `النتائج · ${SITE}`,
+      desc: 'نتائج Green Apple بسخنين: مقارنة قبل وبعد وقياسات كل حالة مع كل مسح.',
+    }
+  }
   if (isOffersPage) {
     return {
       title: `العروض · ${SITE}`,
@@ -100,6 +109,8 @@ export default function App() {
           <TreatmentsPage />
         ) : isOffersPage ? (
           <OffersPage />
+        ) : isResultsPage ? (
+          <ResultsPage />
         ) : isContactPage ? (
           <ContactPage />
         ) : treatmentSlug ? (

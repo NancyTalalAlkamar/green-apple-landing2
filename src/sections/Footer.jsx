@@ -36,7 +36,7 @@ const footerContent = {
         links: [
           { label: 'من نحن', href: '/about' },
           { label: 'العلاجات', href: '/treatments' },
-          { label: 'النتائج', href: '/#results' },
+          { label: 'النتائج', href: '/results' },
           { label: 'الفريق', href: '/#team' },
           { label: 'الأسئلة الشائعة', href: '/#faq' },
           { label: 'تواصل معنا', href: '/contact' },
@@ -69,7 +69,7 @@ const footerContent = {
         links: [
           { label: 'About', href: '/about' },
           { label: 'Treatments', href: '/treatments' },
-          { label: 'Results', href: '/#results' },
+          { label: 'Results', href: '/results' },
           { label: 'Team', href: '/#team' },
           { label: 'FAQ', href: '/#faq' },
           { label: 'Contact us', href: '/contact' },

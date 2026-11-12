@@ -22,14 +22,14 @@ export default function Navbar() {
       ? [
           { label: 'About', href: '/about' },
           { label: 'Treatments', href: '/treatments' },
-          { label: 'Results', href: '#results' },
+          { label: 'Results', href: '/results' },
           { label: 'Offers', href: '/offers' },
           { label: 'Contact', href: '/contact' },
         ]
       : [
           { label: 'من نحن', href: '/about' },
           { label: 'العلاجات', href: '/treatments' },
-          { label: 'النتائج', href: '#results' },
+          { label: 'النتائج', href: '/results' },
           { label: 'العروض', href: '/offers' },
           { label: 'تواصل معنا', href: '/contact' },
         ]

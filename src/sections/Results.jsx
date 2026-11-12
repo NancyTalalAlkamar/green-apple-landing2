@@ -218,7 +218,7 @@ export default function Results() {
             ))}
           </div>
           <Reveal.Item>
-            <Button href="#results" variant="outline" size="md" icon={ChevronIcon}>
+            <Button href="/results" variant="outline" size="md" icon={ChevronIcon}>
               {resultsData.all}
             </Button>
           </Reveal.Item>
