@@ -15,15 +15,24 @@ export default function Navbar() {
 
   useMotionValueEvent(scrollY, 'change', (y) => setScrolled(y > 40))
 
-  // إذا كانت اللغة إنجليزية نأخذ الترجمة، وإذا كانت عربية نأخذ ملفك الأصلي كما هو
-  // "تواصل معنا" بيفتح صفحة التواصل المنفصلة
-  // + "من نحن" بأول القائمة، و"العلاجات" بتفتح صفحة العلاجات
-  const navLinks = [
-    { label: lang === 'en' ? 'About' : 'من نحن', href: '/about' },
-    ...(lang === 'en' ? t.nav.links : originalNav.links).map((l) =>
-      l.href === '#contact' ? { ...l, href: '/contact' } : l.href === '#services' ? { ...l, href: '/treatments' } : l,
-    ),
-  ]
+  // روابط القائمة: 5 روابط بس عشان ما تزحم.
+  // "البرنامج" و"الأسئلة الشائعة" موجودين بالرئيسية وبالفوتر.
+  const navLinks =
+    lang === 'en'
+      ? [
+          { label: 'About', href: '/about' },
+          { label: 'Treatments', href: '/treatments' },
+          { label: 'Results', href: '#results' },
+          { label: 'Offers', href: '/offers' },
+          { label: 'Contact', href: '/contact' },
+        ]
+      : [
+          { label: 'من نحن', href: '/about' },
+          { label: 'العلاجات', href: '/treatments' },
+          { label: 'النتائج', href: '#results' },
+          { label: 'العروض', href: '/offers' },
+          { label: 'تواصل معنا', href: '/contact' },
+        ]
   const ctaText = lang === 'en' ? t.nav.cta : originalNav.cta
 
   // بصفحات العلاجات، روابط الأقسام بترجع للرئيسية (مثلاً /#results)

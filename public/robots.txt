@@ -1,4 +1,6 @@
+# مؤقت لحد الإطلاق الرسمي: بيمنع محركات البحث تأرشف الموقع.
+# يوم الإطلاق بدّلي "Disallow: /" بـ "Allow: /"
 User-agent: *
-Allow: /
+Disallow: /
 
 Sitemap: https://green-apple-landing2-pps8.vercel.app/sitemap.xml

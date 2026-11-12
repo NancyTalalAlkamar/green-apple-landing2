@@ -1,9 +1,29 @@
-import { MessageCircle, ShieldCheck } from 'lucide-react'
-import { WHATSAPP_URL, bookingUrl } from '../data/content'
+import { Instagram, Facebook, MessageCircle, ShieldCheck } from 'lucide-react'
+import { WHATSAPP_URL } from '../data/content'
 import { useLanguage } from '../context/LanguageContext'
 
-// كل رابط إله وجهة حقيقية. الروابط اللي لسا ما إلها صفحة مخفية لحد ما تجهز:
-// النتائج، العروض، من نحن، دخول المريضات، النسخة العبرية، إنستغرام وفيسبوك.
+// روابط السوشال ميديا — بدّلي '#' برابط حساب العيادة لما يوصل
+const SOCIAL = {
+  instagram: '#',
+  facebook: '#',
+  tiktok: '#',
+}
+
+function TikTok(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6 2.6 2.6 0 0 1 3.36-2.49V9.66a5.73 5.73 0 0 0-.76-.05A5.69 5.69 0 0 0 4.17 15.3 5.69 5.69 0 0 0 9.86 21a5.69 5.69 0 0 0 5.69-5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.25-1.48Z" />
+    </svg>
+  )
+}
+
+const socials = [
+  { icon: Instagram, href: SOCIAL.instagram, label: 'Instagram' },
+  { icon: Facebook, href: SOCIAL.facebook, label: 'Facebook' },
+  { icon: TikTok, href: SOCIAL.tiktok, label: 'TikTok' },
+  { icon: MessageCircle, href: WHATSAPP_URL, label: 'WhatsApp' },
+]
+
 const footerContent = {
   ar: {
     about: 'عيادة تنحيف ونحت جسم بسخنين. برنامج شخصي بخطة ومتابعة وقياس.',
@@ -14,18 +34,21 @@ const footerContent = {
       {
         title: 'الموقع',
         links: [
-          { label: 'العلاجات', href: '/#services' },
-          { label: 'طريقة جرين أبل', href: '/#journey' },
+          { label: 'من نحن', href: '/about' },
+          { label: 'العلاجات', href: '/treatments' },
+          { label: 'النتائج', href: '/#results' },
+          { label: 'الفريق', href: '/#team' },
           { label: 'الأسئلة الشائعة', href: '/#faq' },
-          { label: 'تواصل معنا', href: '/#contact' },
+          { label: 'تواصل معنا', href: '/contact' },
         ],
       },
       {
         title: 'للمريضات',
         links: [
-          { label: 'احجزي استشارة', href: bookingUrl('ar'), external: true },
+          { label: 'احجزي استشارة', href: '/contact' },
+          { label: 'العروض', href: '/offers' },
           { label: 'اسألينا على WhatsApp', href: WHATSAPP_URL, external: true },
-          { label: 'منتصل فيكِ', href: '/#cta' },
+          { label: 'طريقة جرين أبل', href: '/#journey' },
         ],
       },
     ],
@@ -44,18 +67,21 @@ const footerContent = {
       {
         title: 'Site',
         links: [
-          { label: 'Treatments', href: '/#services' },
-          { label: 'The Green Apple way', href: '/#journey' },
+          { label: 'About', href: '/about' },
+          { label: 'Treatments', href: '/treatments' },
+          { label: 'Results', href: '/#results' },
+          { label: 'Team', href: '/#team' },
           { label: 'FAQ', href: '/#faq' },
-          { label: 'Contact us', href: '/#contact' },
+          { label: 'Contact us', href: '/contact' },
         ],
       },
       {
         title: 'For Patients',
         links: [
-          { label: 'Book a consultation', href: bookingUrl('en'), external: true },
+          { label: 'Book a consultation', href: '/contact' },
+          { label: 'Offers', href: '/offers' },
           { label: 'Ask us on WhatsApp', href: WHATSAPP_URL, external: true },
-          { label: 'Request a call', href: '/#cta' },
+          { label: 'The Green Apple way', href: '/#journey' },
         ],
       },
     ],
@@ -106,15 +132,20 @@ export default function Footer() {
           {/* التواصل */}
           <div>
             <h4 className="font-semibold">{f.follow}</h4>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-              className="mt-4 grid size-10 place-items-center rounded-full border border-white/20 transition-all hover:-translate-y-0.5 hover:border-copper-300 hover:text-copper-300"
-            >
-              <MessageCircle className="size-4" />
-            </a>
+            <div className="mt-4 flex flex-wrap gap-2.5">
+              {socials.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  {...(href !== '#' ? { target: '_blank', rel: 'noreferrer' } : {})}
+                  aria-label={label}
+                  title={label}
+                  className="grid size-10 place-items-center rounded-full border border-white/20 transition-all hover:-translate-y-0.5 hover:border-copper-300 hover:text-copper-300"
+                >
+                  <Icon className="size-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
