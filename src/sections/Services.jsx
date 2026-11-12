@@ -88,7 +88,19 @@ export default function Services() {
   return (
     <section id="services" className="py-20 sm:py-24" dir={isEn ? 'ltr' : 'rtl'}>
       <div className="container-page">
-        <SectionHeading badge={badge} title={titleText} accent={accentText} />
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <SectionHeading badge={badge} title={titleText} accent={accentText} />
+          {/* زر لصفحة كل العلاجات */}
+          <a
+            href="/treatments"
+            className="group inline-flex h-12 shrink-0 items-center gap-3 self-start rounded-full border border-sage-200 bg-white ps-5 pe-1.5 text-sm font-semibold text-ink transition hover:border-copper-600 sm:self-auto"
+          >
+            {isEn ? 'All treatments' : 'كل العلاجات'}
+            <span className="grid size-9 place-items-center rounded-full bg-forest-800 text-copper-300 transition-transform group-hover:-translate-x-1 ltr:group-hover:translate-x-1">
+              <TagArrow className="size-4" />
+            </span>
+          </a>
+        </div>
 
         <Reveal
           stagger
