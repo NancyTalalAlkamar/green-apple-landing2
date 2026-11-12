@@ -3,17 +3,19 @@ import { MotionConfig } from 'framer-motion'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import Services from './sections/Services'
-// import Results from './sections/Results'
+import Results from './sections/Results'
 import Journey from './sections/Journey'
 import Booking from './sections/Booking'
-// import Team from './sections/Team'
+import Team from './sections/Team'
 import FAQ from './sections/FAQ'
 import CTA from './sections/CTA'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import TreatmentPage from './pages/TreatmentPage'
 import ContactPage from './pages/ContactPage'
+import AboutPage from './pages/AboutPage'
 import MobileBar from './components/MobileBar'
+import DemoTag from './components/DemoTag'
 import { treatments } from './data/treatments'
 import { moreTreatments } from './data/moreTreatments'
 
@@ -25,6 +27,8 @@ function getTreatmentSlug() {
 
 // صفحة التواصل: /contact
 const isContactPage = /^\/contact\/?$/.test(window.location.pathname)
+// صفحة من نحن: /about
+const isAboutPage = /^\/about\/?$/.test(window.location.pathname)
 
 // SEO: عنوان ووصف كل صفحة (اللي بيطلعوا بجوجل وبتبويب المتصفح)
 const SITE = 'Green Apple'
@@ -33,6 +37,12 @@ const HOME_DESC =
   'Green Apple — عيادة تنحيف ونحت جسم غير جراحي في سخنين. برنامج شخصي يبدأ باستشارة، مع خطة جلسات ومتابعة وقياسات ثابتة.'
 
 function getSeo(slug) {
+  if (isAboutPage) {
+    return {
+      title: `من نحن · ${SITE}`,
+      desc: 'تعرّفي على Green Apple في سخنين: جولة بالعيادة، كيف بيكون موعدك، وكيف منقيس تقدّمك.',
+    }
+  }
   if (isContactPage) {
     return {
       title: `تواصل معنا · ${SITE}`,
@@ -66,7 +76,9 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <Navbar />
       <main className="overflow-x-clip">
-        {isContactPage ? (
+        {isAboutPage ? (
+          <AboutPage />
+        ) : isContactPage ? (
           <ContactPage />
         ) : treatmentSlug ? (
           <>
@@ -77,12 +89,16 @@ export default function App() {
           <>
             <Hero />
             <Services />
-            {/* مخفي لحد ما توصل حالات حقيقية بموافقة مكتوبة */}
-            {/* <Results /> */}
+            {/* محتوى تجريبي — بيتبدّل بحالات حقيقية بموافقة مكتوبة */}
+            <DemoTag>
+              <Results />
+            </DemoTag>
             <Journey />
             <Booking />
-            {/* مخفي لحد ما توصل قائمة الفريق الحقيقية من العيادة */}
-            {/* <Team /> */}
+            {/* محتوى تجريبي — بيتبدّل بأسماء وصور الفريق الحقيقي */}
+            <DemoTag>
+              <Team />
+            </DemoTag>
             <FAQ />
             <CTA />
             <Contact />

@@ -17,9 +17,13 @@ export default function Navbar() {
 
   // إذا كانت اللغة إنجليزية نأخذ الترجمة، وإذا كانت عربية نأخذ ملفك الأصلي كما هو
   // "تواصل معنا" بيفتح صفحة التواصل المنفصلة
-  const navLinks = (lang === 'en' ? t.nav.links : originalNav.links).map((l) =>
-    l.href === '#contact' ? { ...l, href: '/contact' } : l,
-  )
+  // + "من نحن" بأول القائمة
+  const navLinks = [
+    { label: lang === 'en' ? 'About' : 'من نحن', href: '/about' },
+    ...(lang === 'en' ? t.nav.links : originalNav.links).map((l) =>
+      l.href === '#contact' ? { ...l, href: '/contact' } : l,
+    ),
+  ]
   const ctaText = lang === 'en' ? t.nav.cta : originalNav.cta
 
   // بصفحات العلاجات، روابط الأقسام بترجع للرئيسية (مثلاً /#results)
