@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
-import { Globe, ChevronDown, Menu, X } from 'lucide-react'
+import { Globe, ChevronDown, Menu, X, UserRound } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import { nav as originalNav } from '../data/content'
 import { EASE } from '../lib/motion'
@@ -42,10 +42,7 @@ export default function Navbar() {
   return (
     <>
       {/* Thin reading-progress bar */}
-      <motion.div
-        style={{ scaleX: scrollYProgress }}
-        className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-right bg-copper-600"
-      />
+      <motion.div style={{ scaleX: scrollYProgress }} className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-right bg-copper-600" />
 
       <motion.header
         initial={{ y: -80, opacity: 0 }}
@@ -75,10 +72,7 @@ export default function Navbar() {
             <ul className="hidden items-center gap-7 lg:flex">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={linkHref(l.href)}
-                    className="group relative text-sm text-white/85 transition-colors hover:text-white"
-                  >
+                  <a href={linkHref(l.href)} className="group relative text-sm text-white/85 transition-colors hover:text-white">
                     {l.label}
                     <span className="absolute -bottom-1 right-0 h-px w-0 bg-copper-300 transition-all duration-300 group-hover:w-full" />
                   </a>
@@ -90,7 +84,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2 sm:gap-3">
               {/* زر القائمة المنسدلة للغة */}
               <div className="relative hidden md:block">
-                <button 
+                <button
                   onClick={() => setLangOpen((prev) => !prev)}
                   className="flex items-center gap-1.5 rounded-full border border-white/25 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10 transition"
                 >
@@ -108,13 +102,19 @@ export default function Navbar() {
                       className="absolute right-0 mt-2 w-36 overflow-hidden rounded-2xl border border-white/15 bg-forest-900/95 py-1.5 shadow-xl backdrop-blur-xl"
                     >
                       <button
-                        onClick={() => { setLang('ar'); setLangOpen(false); }}
+                        onClick={() => {
+                          setLang('ar')
+                          setLangOpen(false)
+                        }}
                         className={`w-full px-4 py-2 text-right text-sm transition hover:bg-white/10 ${lang === 'ar' ? 'text-copper-300 font-bold' : 'text-white/90'}`}
                       >
                         العربية
                       </button>
                       <button
-                        onClick={() => { setLang('en'); setLangOpen(false); }}
+                        onClick={() => {
+                          setLang('en')
+                          setLangOpen(false)
+                        }}
                         className={`w-full px-4 py-2 text-right text-sm transition hover:bg-white/10 ${lang === 'en' ? 'text-copper-300 font-bold' : 'text-white/90'}`}
                       >
                         English
@@ -124,7 +124,11 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {/* زر "دخول" مخفي لحد ما تجهز منطقة المريضات وتكون محمية */}
+              {/* دخول المريضات (نسخة تجريبية لحد ما ينربط النظام) */}
+              <a href="/my" className="hidden items-center gap-1.5 rounded-full px-2 py-1.5 text-sm text-white/90 transition hover:text-white sm:flex">
+                <UserRound className="size-4" />
+                {lang === 'en' ? 'Log in' : 'دخول'}
+              </a>
               {/* بالموبايل الزر مخفي (موجود بالشريط اللي تحت) عشان ما يركب على اللوغو */}
               <span className="hidden sm:block">
                 <Button href="/contact" size="sm">
@@ -154,34 +158,29 @@ export default function Navbar() {
               >
                 <ul className="flex flex-col">
                   {navLinks.map((l, i) => (
-                    <motion.li
-                      key={l.href}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.04 * i }}
-                    >
-                      <a
-                        href={linkHref(l.href)}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-xl px-3 py-3 text-white/90 hover:bg-white/10"
-                      >
+                    <motion.li key={l.href} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.04 * i }}>
+                      <a href={linkHref(l.href)} onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-white/90 hover:bg-white/10">
                         {l.label}
                       </a>
                     </motion.li>
                   ))}
                 </ul>
+                <a href="/my" className="mt-1 flex items-center gap-2 rounded-xl px-3 py-3 text-white/90 hover:bg-white/10">
+                  <UserRound className="size-4" />
+                  {lang === 'en' ? 'Patient login' : 'دخول المريضات'}
+                </a>
                 <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-3">
                   <Button href="/contact" size="sm" className="flex-1" onClick={() => setOpen(false)}>
                     {ctaText}
                   </Button>
                   <div className="flex gap-2">
-                    <button 
+                    <button
                       onClick={() => setLang('ar')}
                       className={`rounded-full border px-3 py-1.5 text-xs ${lang === 'ar' ? 'border-copper-300 text-copper-300 font-bold' : 'border-white/25 text-white'}`}
                     >
                       العربية
                     </button>
-                    <button 
+                    <button
                       onClick={() => setLang('en')}
                       className={`rounded-full border px-3 py-1.5 text-xs ${lang === 'en' ? 'border-copper-300 text-copper-300 font-bold' : 'border-white/25 text-white'}`}
                     >

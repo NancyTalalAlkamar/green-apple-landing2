@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 /* ───────────── Design tokens (from the Figma file) ───────────── */
+html {
+  scroll-behavior: smooth;
+}
 @theme {
   --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
 

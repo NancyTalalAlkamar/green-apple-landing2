@@ -17,6 +17,7 @@ import AboutPage from './pages/AboutPage'
 import TreatmentsPage from './pages/TreatmentsPage'
 import OffersPage from './pages/OffersPage'
 import ResultsPage from './pages/ResultsPage'
+import PatientPage from './pages/PatientPage'
 import MobileBar from './components/MobileBar'
 import DemoTag from './components/DemoTag'
 import { treatments } from './data/treatments'
@@ -38,14 +39,21 @@ const isTreatmentsPage = /^\/treatments\/?$/.test(window.location.pathname)
 const isOffersPage = /^\/offers\/?$/.test(window.location.pathname)
 // صفحة النتائج: /results
 const isResultsPage = /^\/results\/?$/.test(window.location.pathname)
+// منطقة المريضة: /my
+const isPatientPage = /^\/my\/?$/.test(window.location.pathname)
 
 // SEO: عنوان ووصف كل صفحة (اللي بيطلعوا بجوجل وبتبويب المتصفح)
 const SITE = 'Green Apple'
 const HOME_TITLE = `${SITE} · عيادة تنحيف ونحت جسم في سخنين`
-const HOME_DESC =
-  'Green Apple — عيادة تنحيف ونحت جسم غير جراحي في سخنين. برنامج شخصي يبدأ باستشارة، مع خطة جلسات ومتابعة وقياسات ثابتة.'
+const HOME_DESC = 'Green Apple — عيادة تنحيف ونحت جسم غير جراحي في سخنين. برنامج شخصي يبدأ باستشارة، مع خطة جلسات ومتابعة وقياسات ثابتة.'
 
 function getSeo(slug) {
+  if (isPatientPage) {
+    return {
+      title: `منطقة المريضة · ${SITE}`,
+      desc: 'مواعيدك وتقدّمك بخطة العلاج بمكان واحد.',
+    }
+  }
   if (isResultsPage) {
     return {
       title: `النتائج · ${SITE}`,
@@ -77,7 +85,11 @@ function getSeo(slug) {
     }
   }
   const t = slug && (treatments[slug] || moreTreatments[slug])
-  if (t) return { title: `${t.ar.title} · ${t.ar.accent} · ${SITE}`, desc: t.ar.lead }
+  if (t)
+    return {
+      title: `${t.ar.title} · ${t.ar.accent} · ${SITE}`,
+      desc: t.ar.lead,
+    }
   return { title: HOME_TITLE, desc: HOME_DESC }
 }
 
@@ -101,9 +113,12 @@ export default function App() {
   return (
     // reducedMotion="user" → respects the OS "reduce motion" setting automatically.
     <MotionConfig reducedMotion="user">
-      <Navbar />
+      {/* منطقة المريضة صفحة كاملة لحالها: بدون ناف وفوتر */}
+      {!isPatientPage && <Navbar />}
       <main className="overflow-x-clip">
-        {isAboutPage ? (
+        {isPatientPage ? (
+          <PatientPage />
+        ) : isAboutPage ? (
           <AboutPage />
         ) : isTreatmentsPage ? (
           <TreatmentsPage />
@@ -138,10 +153,11 @@ export default function App() {
           </>
         )}
       </main>
-      <Footer />
-      <MobileBar />
+      {!isPatientPage && <Footer />}
+      {/* شريط الحجز تحت مش لازم بمنطقة المريضة */}
+      {!isPatientPage && <MobileBar />}
       {/* مساحة تحت الفوتر بالموبايل عشان الشريط الثابت ما يغطي آخر الصفحة */}
-      <div className="h-20 lg:hidden" />
+      {!isPatientPage && <div className="h-20 lg:hidden" />}
     </MotionConfig>
   )
 }
