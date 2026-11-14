@@ -145,7 +145,7 @@ function Sparkline({ values, w = 220, h = 64 }) {
         animate={{ pathLength: 1 }}
         transition={{ duration: 1.2, ease: EASE }}
       />
-      <circle cx={flipped.at(-1)[0]} cy={flipped.at(-1)[1]} r="4.5" fill="#8c4724" stroke="white" strokeWidth="2" />
+      <circle cx={flipped[flipped.length - 1][0]} cy={flipped[flipped.length - 1][1]} r="4.5" fill="#8c4724" stroke="white" strokeWidth="2" />
     </svg>
   )
 }
