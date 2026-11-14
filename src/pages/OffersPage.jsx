@@ -148,8 +148,8 @@ function Featured() {
           className="absolute top-6 left-6 grid size-32 place-items-center sm:size-36"
         >
           <svg viewBox="0 0 100 100" className="absolute inset-0 size-full">
-            <circle cx="50" cy="50" r="48" fill="#d9a06a" />
-            <circle cx="50" cy="50" r="41" fill="none" stroke="#14291f" strokeWidth="1.5" strokeDasharray="2 5" strokeLinecap="round" />
+            <circle cx="50" cy="50" r="48" fill="#e8d3c6" />
+            <circle cx="50" cy="50" r="41" fill="none" stroke="#2b2826" strokeWidth="1.5" strokeDasharray="2 5" strokeLinecap="round" />
           </svg>
         </motion.div>
         <div className="pointer-events-none absolute top-6 left-6 grid size-32 place-items-center text-center text-forest-900 sm:size-36">
@@ -182,12 +182,12 @@ export default function OffersPage() {
                 transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
                 className="mt-4 text-4xl leading-[1.15] font-bold text-ink sm:text-6xl"
               >
-                عروض <span className="text-copper-600">على قياسك</span>
+                عروض <span className="text-gold-600">على قياسك</span>
               </motion.h1>
               <p className="mt-3 max-w-lg text-base leading-8 text-ink/70 sm:text-lg">قصّي الكوبون اللي بيعجبك، ومنكمّل معك على WhatsApp.</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-ink/50">
-              <Gift className="size-4 text-copper-600" /> كل عرض بيبلّش باستشارة
+              <Gift className="size-4 text-gold-600" /> كل عرض بيبلّش باستشارة
             </div>
           </div>
         </div>

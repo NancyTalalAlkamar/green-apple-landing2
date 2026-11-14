@@ -71,7 +71,7 @@ function PhoneMockup({ isEn, bookingData }) {
     <div className={`relative w-[240px] rounded-[2.2rem] border-[7px] border-forest-900 bg-white p-4 shadow-2xl sm:w-[260px] ${isEn ? 'text-left' : 'text-right'}`}>
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-1.5 text-sm font-semibold">
-          <img src="/images/logo-mark.png" alt="" className="h-5" />
+          <img src="/images/logo-mark.svg" alt="" className="h-5" />
           {content.brand}
         </span>
         <span className="text-xs text-muted">{content.langTag}</span>
@@ -88,7 +88,7 @@ function PhoneMockup({ isEn, bookingData }) {
         <p className="mt-1 text-[11px] text-ink/70">{content.includes}</p>
         <div className="mt-3 grid grid-cols-2 gap-2">
           <button className="rounded-full bg-copper-600 py-2 text-xs font-semibold text-white">{content.confirm}</button>
-          <button className="rounded-full border border-copper-600 py-2 text-xs font-semibold text-copper-600">
+          <button className="rounded-full border border-copper-600 py-2 text-xs font-semibold text-gold-600">
             {content.reschedule}
           </button>
         </div>
@@ -185,7 +185,7 @@ export default function Booking() {
                     index === 0 ? 'pulse-card' : ''
                   }`}
                 >
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-white text-copper-600 shadow-sm">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-white text-gold-600 shadow-sm">
                     <Icon className="size-4" />
                   </span>
                   <div className={isEnglish ? 'text-left' : 'text-right'}>

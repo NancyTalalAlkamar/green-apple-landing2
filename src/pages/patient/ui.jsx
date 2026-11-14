@@ -5,7 +5,7 @@ import { EASE } from '../../lib/motion'
 import { STATUS } from './data'
 
 /* ═════════ أدوات صغيرة ═════════ */
-const CARD = 'rounded-4xl shadow-[0_1px_2px_rgba(16,34,25,0.04),0_12px_32px_-16px_rgba(16,34,25,0.18)]'
+const CARD = 'rounded-4xl shadow-[0_1px_2px_rgba(28,26,25,0.04),0_12px_32px_-16px_rgba(28,26,25,0.18)]'
 
 export function Card({ className = '', children, lift = true, ...rest }) {
   return (
@@ -24,7 +24,7 @@ export function Card({ className = '', children, lift = true, ...rest }) {
 }
 
 export function Eyebrow({ children, className = '' }) {
-  return <p className={`text-xs font-semibold text-copper-600 ${className}`}>{children}</p>
+  return <p className={`text-xs font-semibold text-gold-600 ${className}`}>{children}</p>
 }
 
 export function useNow(ms = 1000) {
@@ -73,7 +73,7 @@ export function CountUp({ value, decimals = 0, duration = 900 }) {
   return <>{Number(v.toFixed(decimals)).toLocaleString('en-US', { minimumFractionDigits: decimals })}</>
 }
 
-export function Ring({ value, total, size = 84, stroke = 7, color = '#d9a06a', track = 'rgba(255,255,255,0.12)' }) {
+export function Ring({ value, total, size = 84, stroke = 7, color = '#e8d3c6', track = 'rgba(255,255,255,0.12)' }) {
   const r = size / 2 - stroke
   const c = 2 * Math.PI * r
   return (
@@ -189,7 +189,7 @@ export function Dropdown({ open, onClose, children, className = '' }) {
   )
 }
 
-export function Burst({ colors = ['#d9a06a', '#ffffff'] }) {
+export function Burst({ colors = ['#e8d3c6', '#ffffff'] }) {
   return (
     <div className="pointer-events-none absolute inset-0">
       {Array.from({ length: 18 }).map((_, i) => {

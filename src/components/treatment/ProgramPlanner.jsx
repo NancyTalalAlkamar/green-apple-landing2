@@ -87,7 +87,7 @@ export default function ProgramPlanner({ p }) {
                         </span>
                       ) : (
                         Array.from({ length: w.s }).map((__, k) => (
-                          <span key={k} className="size-4 rounded-full bg-copper-300 shadow-[0_0_12px_rgba(217,160,106,0.6)]" />
+                          <span key={k} className="size-4 rounded-full bg-copper-300 shadow-[0_0_12px_rgba(232,211,198,0.6)]" />
                         ))
                       )}
                     </motion.div>
@@ -115,7 +115,7 @@ export default function ProgramPlanner({ p }) {
                 touched.current = true
                 setWeek(Number(e.target.value))
               }}
-              className="w-full cursor-pointer rounded-full accent-[#d9a06a] focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-300/60 focus-visible:ring-offset-4 focus-visible:ring-offset-forest-800"
+              className="w-full cursor-pointer rounded-full accent-[#e8d3c6] focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-300/60 focus-visible:ring-offset-4 focus-visible:ring-offset-forest-800"
             />
             <p className="mt-2 flex items-center gap-2 text-xs text-white/50">
               <MoveHorizontal className="size-4" />
@@ -142,7 +142,7 @@ export default function ProgramPlanner({ p }) {
                 transition={{ duration: 0.3, ease: EASE }}
                 className="rounded-3xl bg-white p-5 sm:p-6"
               >
-                <span className="text-xs font-semibold text-copper-600">
+                <span className="text-xs font-semibold text-gold-600">
                   {week === 0 ? p.startLabel : `${p.weekLabel} ${week}`}
                 </span>
                 <p className="mt-1 text-xl font-bold text-ink">{phase.title}</p>

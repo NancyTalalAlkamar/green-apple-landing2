@@ -16,7 +16,7 @@ export default function SectionHeading({
   children,
 }) {
   const titleColor = tone === 'dark' ? 'text-white' : 'text-ink'
-  const accentColor = tone === 'dark' ? 'text-copper-300' : 'text-copper-600'
+  const accentColor = tone === 'dark' ? 'text-copper-300' : 'text-gold-600'
   const Accent = <span className={accentColor}>{accent}</span>
 
   return (

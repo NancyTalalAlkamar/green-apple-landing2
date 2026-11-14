@@ -20,7 +20,7 @@ function Segment({ labels }) {
             style={{
               width: CELL,
               backgroundImage:
-                'linear-gradient(to right, rgba(16,34,25,.55) 1px, transparent 1px), linear-gradient(to right, rgba(16,34,25,.8) 1.5px, transparent 1.5px), linear-gradient(to right, rgba(16,34,25,.95) 2px, transparent 2px)',
+                'linear-gradient(to right, rgba(28,26,25,.55) 1px, transparent 1px), linear-gradient(to right, rgba(28,26,25,.8) 1.5px, transparent 1.5px), linear-gradient(to right, rgba(28,26,25,.95) 2px, transparent 2px)',
               backgroundSize: `${CELL / 10}px 26%, ${CELL / 2}px 42%, ${CELL}px 60%`,
               backgroundRepeat: 'repeat-x',
             }}

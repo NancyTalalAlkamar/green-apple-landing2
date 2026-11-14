@@ -22,10 +22,10 @@ function Item({ it, i, tone }) {
       />
       <div className={`h-full rounded-3xl p-5 ${tone === 'before' ? 'bg-sage-50' : 'bg-sand-50'}`}>
         <div className="flex items-center gap-3">
-          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-white text-copper-600 shadow-sm">
+          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-white text-gold-600 shadow-sm">
             <Icon className="size-4" />
           </span>
-          <span className="text-xs font-semibold text-copper-700">{it.when}</span>
+          <span className="text-xs font-semibold text-gold-700">{it.when}</span>
         </div>
         <p className="mt-3 text-[15px] leading-7 text-ink">{it.text}</p>
       </div>
@@ -97,7 +97,7 @@ export default function CareTimeline({ c }) {
             ))}
             <div className="relative py-2">
               <span className="absolute top-1/2 size-7 -translate-y-1/2 rounded-full bg-copper-600 ring-4 ring-copper-300/40 ltr:-left-10 rtl:-right-10" />
-              <span className="text-lg font-bold text-copper-600">{c.sessionLabel}</span>
+              <span className="text-lg font-bold text-gold-600">{c.sessionLabel}</span>
             </div>
             <span className="relative inline-flex rounded-full bg-copper-300 px-3 py-1 text-xs font-semibold text-forest-900">{c.afterLabel}</span>
             {c.after.map((it, i) => (
@@ -106,7 +106,7 @@ export default function CareTimeline({ c }) {
           </div>
         </div>
 
-        <div className="mt-8 flex items-start gap-3 rounded-2xl border border-copper-300/50 bg-sand-50 p-4 text-sm leading-7 text-copper-700">
+        <div className="mt-8 flex items-start gap-3 rounded-2xl border border-copper-300/50 bg-sand-50 p-4 text-sm leading-7 text-gold-700">
           <AlertCircle className="mt-1 size-4 shrink-0" />
           {c.alert}
         </div>

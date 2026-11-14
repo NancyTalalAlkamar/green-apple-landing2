@@ -11,7 +11,7 @@ function ApptRow({ a, open, onToggle, onConfirm, onMove, onCancel, frozen }) {
   const canConfirm = a.status === 'pending' || a.status === 'scheduled'
   return (
     <li
-      className={`overflow-hidden rounded-3xl transition-colors ${open ? 'bg-white shadow-[0_12px_32px_-16px_rgba(16,34,25,0.25)]' : 'bg-white/60 hover:bg-white'}`}
+      className={`overflow-hidden rounded-3xl transition-colors ${open ? 'bg-white shadow-[0_12px_32px_-16px_rgba(28,26,25,0.25)]' : 'bg-white/60 hover:bg-white'}`}
     >
       <button type="button" onClick={onToggle} className="flex w-full items-center gap-3 p-3 text-start sm:gap-4 sm:p-4" aria-expanded={open}>
         <span className={`grid w-12 shrink-0 rounded-2xl py-1.5 text-center ${a.kind === 'laser' ? 'bg-sage-100' : 'bg-sand-100'}`}>
@@ -22,7 +22,7 @@ function ApptRow({ a, open, onToggle, onConfirm, onMove, onCancel, frozen }) {
           <span className="flex flex-wrap items-center gap-1.5">
             <span className="font-bold text-ink">{a.title}</span>
             {a.scan && (
-              <span className="flex items-center gap-1 rounded-full bg-copper-300/20 px-2 py-0.5 text-[10px] font-bold text-copper-700">
+              <span className="flex items-center gap-1 rounded-full bg-copper-300/20 px-2 py-0.5 text-[10px] font-bold text-gold-700">
                 <ScanLine className="size-3" /> مسح 3D
               </span>
             )}
@@ -120,7 +120,7 @@ export function ApptsPage({ ctx }) {
             type="button"
             onClick={() => openSheet('waitlist')}
             disabled={frozen}
-            className={`flex h-11 items-center gap-2 rounded-full px-4 text-sm font-semibold transition disabled:opacity-40 ${waitlist.on ? 'bg-copper-300/20 text-copper-700 ring-1 ring-copper-300' : 'text-ink ring-1 ring-sage-200 hover:bg-sand-50'}`}
+            className={`flex h-11 items-center gap-2 rounded-full px-4 text-sm font-semibold transition disabled:opacity-40 ${waitlist.on ? 'bg-copper-300/20 text-gold-700 ring-1 ring-copper-300' : 'text-ink ring-1 ring-sage-200 hover:bg-sand-50'}`}
           >
             <Bell className="size-4" />
             {waitlist.on ? 'على قائمة الانتظار' : 'بدي وقت أبكر'}
@@ -170,7 +170,7 @@ export function ApptsPage({ ctx }) {
             <button
               type="button"
               onClick={() => setAll(true)}
-              className="mx-auto flex h-11 items-center gap-2 rounded-full px-5 text-sm font-semibold text-copper-600 ring-1 ring-sage-200 transition hover:bg-white"
+              className="mx-auto flex h-11 items-center gap-2 rounded-full px-5 text-sm font-semibold text-gold-600 ring-1 ring-sage-200 transition hover:bg-white"
             >
               اعرضي كل المواعيد ({upcoming.length}) <ChevronDown className="size-4" />
             </button>

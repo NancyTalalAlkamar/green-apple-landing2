@@ -37,8 +37,8 @@ function BodyMap({ active, onPick }) {
     <svg viewBox="0 0 220 320" className="h-full w-auto" role="img" aria-label="خريطة الجسم">
       <defs>
         <radialGradient id="glow">
-          <stop offset="0%" stopColor="#d9a06a" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#d9a06a" stopOpacity="0" />
+          <stop offset="0%" stopColor="#e8d3c6" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#e8d3c6" stopOpacity="0" />
         </radialGradient>
       </defs>
       {/* شبكة قياس خفيفة */}
@@ -61,7 +61,7 @@ function BodyMap({ active, onPick }) {
                   cx={x}
                   cy={y}
                   fill="none"
-                  stroke="#d9a06a"
+                  stroke="#e8d3c6"
                   strokeWidth="1.5"
                   animate={{ r: [6, 18], opacity: [0.9, 0] }}
                   transition={{ duration: 1.4, repeat: Infinity, delay: k * 0.2 }}
@@ -70,8 +70,8 @@ function BodyMap({ active, onPick }) {
               <motion.circle
                 cx={x}
                 cy={y}
-                animate={{ r: on ? 6 : 4, fill: on ? '#d9a06a' : 'rgba(255,255,255,0.55)' }}
-                stroke="#14291f"
+                animate={{ r: on ? 6 : 4, fill: on ? '#e8d3c6' : 'rgba(255,255,255,0.55)' }}
+                stroke="#2b2826"
                 strokeWidth="2"
               />
               {/* منطقة أكبر للكبس */}
@@ -116,7 +116,7 @@ function Explorer() {
           transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
           className="mt-4 text-4xl leading-[1.15] font-bold text-ink sm:text-6xl"
         >
-          شو <span className="text-copper-600">هدفك؟</span>
+          شو <span className="text-gold-600">هدفك؟</span>
         </motion.h1>
         <p className="mt-3 max-w-xl text-base leading-8 text-ink/70 sm:text-lg">اختاري هدفك أو اكبسي على أي نقطة على الجسم، ومنفرجيكي العلاج اللي بيناسبه.</p>
 
@@ -238,7 +238,7 @@ function Glance() {
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <h2 className="text-3xl font-bold text-ink sm:text-4xl">
-            كل العلاجات <span className="text-copper-600">بلمحة</span>
+            كل العلاجات <span className="text-gold-600">بلمحة</span>
           </h2>
           <p className="text-sm text-ink/50">عدد الجلسات تقريبي، والخطة بتتحدد بالاستشارة.</p>
         </div>
@@ -301,7 +301,7 @@ function NotSure() {
     <section className="pb-16 sm:pb-20">
       <div className="container-page">
         <div className="relative flex flex-col gap-6 overflow-hidden rounded-5xl bg-forest-900 px-6 py-10 text-white sm:flex-row sm:items-center sm:justify-between sm:px-12">
-          <div className="pointer-events-none absolute -top-40 size-[420px] rounded-full bg-[radial-gradient(circle,rgba(217,160,106,0.3),transparent_65%)] ltr:-left-40 rtl:-right-40" />
+          <div className="pointer-events-none absolute -top-40 size-[420px] rounded-full bg-[radial-gradient(circle,rgba(232,211,198,0.3),transparent_65%)] ltr:-left-40 rtl:-right-40" />
           <div className="relative">
             <p className="text-3xl font-bold sm:text-4xl">
               مش متأكدة <span className="text-copper-300">شو بيناسبك؟</span>

@@ -97,7 +97,7 @@ function MapCard({ contactData, isEn }) {
           transition={{ duration: 1.8, repeat: Infinity, ease: 'easeOut' }}
           className="absolute top-full left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-copper-600"
         />
-        <MapPin className="size-12 fill-copper-600 text-white drop-shadow-lg" strokeWidth={1.5} />
+        <MapPin className="size-12 fill-gold-600 text-white drop-shadow-lg" strokeWidth={1.5} />
       </div>
 
       <div className={`absolute inset-x-3 bottom-3 flex items-center justify-between gap-3 rounded-2xl bg-white/90 p-3 backdrop-blur ${isEn ? 'ps-5' : 'pe-5'}`}>
@@ -134,7 +134,7 @@ export default function Contact() {
                   href={c.href}
                   className={`block rounded-2xl bg-sage-50 p-4 transition-colors hover:bg-sage-100 ${isEn ? 'text-left' : 'text-right'}`}
                 >
-                  <Icon className="size-4 text-copper-600" />
+                  <Icon className="size-4 text-gold-600" />
                   <p className="mt-3 text-sm font-semibold">{c.label}</p>
                   <p className="mt-1 text-sm text-ink/80">
                     <bdi dir={/^[+\d]/.test(c.value) ? 'ltr' : 'auto'}>{c.value}</bdi>

@@ -5,8 +5,8 @@ import SectionHeading from '../ui/SectionHeading'
 
 /* رسومات صغيرة متحركة لكل هدف */
 function Visual({ kind, dark }) {
-  const stroke = dark ? '#d9a06a' : '#8c4724'
-  const soft = dark ? 'rgba(255,255,255,0.18)' : 'rgba(31,61,47,0.15)'
+  const stroke = dark ? '#e8d3c6' : '#a8766a'
+  const soft = dark ? 'rgba(255,255,255,0.18)' : 'rgba(52,48,45,0.15)'
   const loop = { repeat: Infinity, repeatType: 'reverse', duration: 2.4, ease: 'easeInOut' }
 
   if (kind === 'shrink') {
@@ -63,7 +63,7 @@ function Visual({ kind, dark }) {
         cy="80"
         ry="7"
         fill="none"
-        stroke={dark ? '#fff' : '#1f3d2f'}
+        stroke={dark ? '#fff' : '#34302d'}
         strokeWidth="2"
         strokeDasharray="3 4"
         initial={{ rx: 40 }}
@@ -76,8 +76,8 @@ function Visual({ kind, dark }) {
 
 const STYLES = [
   { card: 'bg-forest-800 text-white', text: 'text-white/75', num: 'text-copper-300', dark: true },
-  { card: 'bg-sand-100 text-ink', text: 'text-ink/70', num: 'text-copper-600', dark: false },
-  { card: 'bg-white text-ink border border-sage-200', text: 'text-ink/70', num: 'text-copper-600', dark: false },
+  { card: 'bg-sand-100 text-ink', text: 'text-ink/70', num: 'text-gold-600', dark: false },
+  { card: 'bg-white text-ink border border-sage-200', text: 'text-ink/70', num: 'text-gold-600', dark: false },
 ]
 
 function GoalCard({ it, i, total, className = '' }) {
@@ -137,7 +137,7 @@ export default function Goals({ g, isEn }) {
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading badge={g.badge} title={g.title} accent={g.accent} />
           <p className="flex max-w-sm items-start gap-2 text-sm leading-7 text-ink/65">
-            <Info className="mt-1 size-4 shrink-0 text-copper-600" />
+            <Info className="mt-1 size-4 shrink-0 text-gold-600" />
             {g.note}
           </p>
         </div>

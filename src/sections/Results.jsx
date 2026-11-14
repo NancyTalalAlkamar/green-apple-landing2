@@ -105,7 +105,7 @@ function MetricBar({ label, value, start, isEn }) {
           className={`absolute inset-y-0 ${isEn ? 'left-0 origin-left' : 'right-0 origin-right'} rounded-full bg-copper-600`}
         />
       </div>
-      <span className="text-left font-semibold text-copper-600" dir="ltr">
+      <span className="text-left font-semibold text-gold-600" dir="ltr">
         {value}
       </span>
     </div>
@@ -146,7 +146,7 @@ export default function Results() {
             <Reveal.Item variants={slideFromEnd} className="rounded-4xl bg-sage-50 p-6">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-lg font-semibold">{current.program}</h3>
-                <span className="text-xs text-copper-600">{current.phase}</span>
+                <span className="text-xs text-gold-600">{current.phase}</span>
               </div>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -212,7 +212,7 @@ export default function Results() {
                 </span>
                 <span>
                   <span className="block text-sm font-semibold">{c.program}</span>
-                  <span className="block text-xs text-copper-600">{c.meta}</span>
+                  <span className="block text-xs text-gold-600">{c.meta}</span>
                 </span>
               </Reveal.Item>
             ))}

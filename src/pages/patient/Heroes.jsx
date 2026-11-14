@@ -88,7 +88,7 @@ export function NextHero({ appt, onConfirm, onMove, onCancel, onHelp }) {
         ))}
       </svg>
       <motion.div
-        className="pointer-events-none absolute -top-24 right-1/3 size-80 rounded-full bg-[radial-gradient(circle,rgba(217,160,106,0.25),transparent_65%)]"
+        className="pointer-events-none absolute -top-24 right-1/3 size-80 rounded-full bg-[radial-gradient(circle,rgba(232,211,198,0.25),transparent_65%)]"
         animate={{ x: [0, -120, 40, 0], y: [0, 60, 20, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -247,19 +247,19 @@ export function TodayHero({ appt }) {
         {/* خريطة مرسومة */}
         <div className="relative min-h-52 overflow-hidden rounded-3xl bg-forest-800">
           <svg viewBox="0 0 300 220" className="absolute inset-0 size-full" preserveAspectRatio="xMidYMid slice" aria-hidden>
-            <g stroke="#2f5240" strokeWidth="14" fill="none" strokeLinecap="round">
+            <g stroke="#6b645e" strokeWidth="14" fill="none" strokeLinecap="round">
               <path d="M-10 160 C 80 150, 120 90, 310 70" />
               <path d="M60 -10 L 110 230" />
               <path d="M200 -10 C 190 80, 230 150, 220 230" />
             </g>
-            <g stroke="#22402f" strokeWidth="6" fill="none">
+            <g stroke="#4d4844" strokeWidth="6" fill="none">
               <path d="M-10 40 L 310 120" />
               <path d="M-10 210 L 310 190" />
             </g>
             <motion.path
               d="M20 200 C 70 170, 100 150, 120 120 S 160 95, 168 98"
               fill="none"
-              stroke="#d9a06a"
+              stroke="#e8d3c6"
               strokeWidth="4"
               strokeDasharray="2 8"
               strokeLinecap="round"
@@ -279,7 +279,7 @@ export function TodayHero({ appt }) {
             </motion.span>
           </div>
           <div className="absolute inset-x-3 bottom-3 flex items-center gap-3 rounded-2xl bg-white/95 p-3 text-ink">
-            <img src="/images/logo-mark.png" alt="" className="h-8" />
+            <img src="/images/logo-mark.svg" alt="" className="h-8" />
             <span className="min-w-0">
               <span className="block text-sm font-bold">Green Apple</span>
               <span className="block truncate text-[11px] text-ink/55">{CLINIC.address}</span>
@@ -327,7 +327,7 @@ export function OfferHero({ from, to, onAccept, onDecline }) {
               type="button"
               disabled={expired}
               onClick={onAccept}
-              className="flex h-12 items-center gap-2 rounded-full bg-white px-6 font-bold text-copper-700 shadow-lg transition hover:bg-sand-50 disabled:opacity-50"
+              className="flex h-12 items-center gap-2 rounded-full bg-white px-6 font-bold text-gold-700 shadow-lg transition hover:bg-sand-50 disabled:opacity-50"
             >
               <Check className="size-5" /> اقبلي الموعد الجديد
             </button>
@@ -392,7 +392,7 @@ export function AfterHero({ next }) {
               transition={{ delay: 0.15 + i * 0.1 }}
               className="flex items-start gap-3 rounded-3xl bg-sand-50 p-4 sm:block"
             >
-              <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-white text-copper-600 shadow-sm">
+              <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-white text-gold-600 shadow-sm">
                 <t.icon className="size-5" />
               </span>
               <span className="block">

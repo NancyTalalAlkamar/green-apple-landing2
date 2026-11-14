@@ -135,7 +135,7 @@ function CaseViewer({ c }) {
           className="flex flex-col p-6 sm:p-9"
         >
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold text-copper-600">{c.who}</span>
+            <span className="text-xs font-semibold text-gold-600">{c.who}</span>
             {/* علامات ثقة */}
             <span className="inline-flex items-center gap-1 rounded-full bg-forest-800/5 px-2 py-0.5 text-[11px] font-semibold text-forest-800">
               <ShieldCheck className="size-3" /> بموافقة موقّعة
@@ -147,10 +147,10 @@ function CaseViewer({ c }) {
           <p className="mt-2 text-3xl font-bold text-ink">{c.title}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-sand-100 px-3 py-1.5 text-xs font-semibold text-ink/75">
-              <Clock className="size-3.5 text-copper-600" /> {c.months}
+              <Clock className="size-3.5 text-gold-600" /> {c.months}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-sand-100 px-3 py-1.5 text-xs font-semibold text-ink/75">
-              <CalendarDays className="size-3.5 text-copper-600" /> {c.sessions}
+              <CalendarDays className="size-3.5 text-gold-600" /> {c.sessions}
             </span>
           </div>
 
@@ -162,7 +162,7 @@ function CaseViewer({ c }) {
                 <div key={m.label}>
                   <div className="flex items-baseline justify-between text-sm">
                     <span className="font-semibold text-ink">{m.label}</span>
-                    <span className="font-bold text-copper-600">
+                    <span className="font-bold text-gold-600">
                       <Count to={m.before - m.after} prefix="−" suffix=" cm" />
                     </span>
                   </div>
@@ -185,7 +185,7 @@ function CaseViewer({ c }) {
           </div>
 
           <p className="mt-6 flex items-start gap-3 border-t border-sage-200 pt-5 text-[15px] leading-7 text-ink/75">
-            <Quote className="mt-1 size-4 shrink-0 text-copper-600" />
+            <Quote className="mt-1 size-4 shrink-0 text-gold-600" />
             {c.quote}
           </p>
 
@@ -260,7 +260,7 @@ function ScanJourney({ c }) {
           key={c.id}
           d={path}
           fill="none"
-          stroke="#d9a06a"
+          stroke="#e8d3c6"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -274,8 +274,8 @@ function ScanJourney({ c }) {
             <motion.circle
               cx={x(i)}
               cy={y(v)}
-              animate={{ r: i === step ? 9 : 5, fill: i <= step ? '#d9a06a' : '#1f3d2f' }}
-              stroke="#d9a06a"
+              animate={{ r: i === step ? 9 : 5, fill: i <= step ? '#e8d3c6' : '#34302d' }}
+              stroke="#e8d3c6"
               strokeWidth="2"
             />
             <text x={x(i)} y={H - 2} textAnchor="middle" style={{ fontSize: 12, fill: 'rgba(255,255,255,0.45)' }}>
@@ -315,7 +315,7 @@ function ResultsFaq() {
   return (
     <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
       <h2 className="text-3xl leading-tight font-bold text-ink sm:text-4xl">
-        أسئلة <span className="text-copper-600">عن النتائج</span>
+        أسئلة <span className="text-gold-600">عن النتائج</span>
       </h2>
       <div className="space-y-2.5">
         {FAQS.map((f, i) => {
@@ -376,7 +376,7 @@ export default function ResultsPage() {
             transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
             className="mt-4 text-4xl leading-[1.15] font-bold text-ink sm:text-6xl"
           >
-            نتائج <span className="text-copper-600">بتنقاس</span>
+            نتائج <span className="text-gold-600">بتنقاس</span>
           </motion.h1>
           <p className="mt-3 max-w-xl text-base leading-8 text-ink/70 sm:text-lg">اسحبي الخط بالنص لتقارني قبل وبعد، واختاري حالة لتشوفي قياساتها.</p>
         </div>
@@ -387,7 +387,7 @@ export default function ResultsPage() {
               {/* لاقي حالة زيّك: هدف + عمر */}
               <div className="flex flex-col gap-4 rounded-4xl border border-sage-200 bg-white p-4 sm:p-5 lg:flex-row lg:items-center lg:gap-8">
                 <p className="flex shrink-0 items-center gap-2 font-bold text-ink">
-                  <Sparkles className="size-4 text-copper-600" /> لاقي حالة زيّك
+                  <Sparkles className="size-4 text-gold-600" /> لاقي حالة زيّك
                 </p>
                 <ChipGroup items={FILTERS} value={filter} onChange={setFilter} layoutId="res-goal" />
                 <span className="hidden h-8 w-px bg-sage-200 lg:block" />

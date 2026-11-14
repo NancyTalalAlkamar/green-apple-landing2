@@ -53,7 +53,7 @@ export default function Navbar() {
         <div className="container-page">
           <motion.nav
             animate={{
-              backgroundColor: scrolled ? 'rgba(20,41,31,0.92)' : 'rgba(30,50,38,0.55)',
+              backgroundColor: scrolled ? 'rgba(43,40,38,0.96)' : 'rgba(43,40,38,0.9)',
               paddingTop: scrolled ? 8 : 10,
               paddingBottom: scrolled ? 8 : 10,
             }}
@@ -62,7 +62,7 @@ export default function Navbar() {
           >
             {/* Logo */}
             <a href={onHome ? '#top' : '/'} className="flex items-center gap-2 ps-2">
-              <img src="/images/logo-mark-white.png" alt="" className="h-8 w-auto" />
+              <img src="/images/logo-mark-white.svg" alt="" className="-my-1 h-12 w-auto" />
               <span className="text-lg font-bold whitespace-nowrap text-white" dir="ltr">
                 Green Apple
               </span>
@@ -131,7 +131,7 @@ export default function Navbar() {
               </a>
               {/* بالموبايل الزر مخفي (موجود بالشريط اللي تحت) عشان ما يركب على اللوغو */}
               <span className="hidden sm:block">
-                <Button href="/contact" size="sm">
+                <Button href="/contact" variant="nude" size="sm">
                   {ctaText}
                 </Button>
               </span>
@@ -170,7 +170,7 @@ export default function Navbar() {
                   {lang === 'en' ? 'Patient login' : 'دخول المريضات'}
                 </a>
                 <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-3">
-                  <Button href="/contact" size="sm" className="flex-1" onClick={() => setOpen(false)}>
+                  <Button href="/contact" variant="nude" size="sm" className="flex-1" onClick={() => setOpen(false)}>
                     {ctaText}
                   </Button>
                   <div className="flex gap-2">

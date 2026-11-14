@@ -91,7 +91,7 @@ function Portal({ onLogout }) {
         <header className="sticky top-0 z-30 bg-sand-50/85 backdrop-blur-xl">
           <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-10">
             <a href="/" className="lg:hidden" aria-label="Green Apple">
-              <img src="/images/logo-mark.png" alt="" className="h-9" />
+              <img src="/images/logo-mark.svg" alt="" className="h-9" />
             </a>
             <p className="text-lg font-bold text-ink lg:text-xl">{titles[tab]}</p>
             <div className="ms-auto flex items-center gap-1">

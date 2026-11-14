@@ -80,7 +80,7 @@ export function MoveContent({ appt, strikes, onConfirm, onWaitlist }) {
       >
         {picked ? `أكّدي النقل لـ ${fmtShort(picked)}` : 'اختاري وقت جديد'}
       </button>
-      <button type="button" onClick={onWaitlist} className="mt-3 w-full text-center text-sm font-semibold text-copper-600">
+      <button type="button" onClick={onWaitlist} className="mt-3 w-full text-center text-sm font-semibold text-gold-600">
         ما في وقت مناسب؟ انضمي لقائمة الانتظار
       </button>
     </>
@@ -140,12 +140,12 @@ export function CancelContent({ appt, strikes, onMove, onConfirm, onKeep }) {
         onClick={onMove}
         className="mt-6 flex w-full items-center gap-3 rounded-2xl border-2 border-copper-300 bg-copper-300/10 px-4 py-3 text-start transition hover:bg-copper-300/20"
       >
-        <RefreshCw className="size-5 shrink-0 text-copper-600" />
+        <RefreshCw className="size-5 shrink-0 text-gold-600" />
         <span className="flex-1">
           <span className="block font-bold text-ink">بدل ما تلغي، انقليه</span>
           <span className="block text-xs text-ink/55">هيك ما بتتأخّر خطتك</span>
         </span>
-        <ArrowLeft className="size-4 text-copper-600" />
+        <ArrowLeft className="size-4 text-gold-600" />
       </button>
       <div className="mt-3 flex gap-2">
         <button type="button" onClick={onKeep} className="h-12 flex-1 rounded-full border border-sage-200 font-semibold text-ink">
@@ -175,7 +175,7 @@ export function WaitlistContent({ value, onSave }) {
   const toggle = (list, set, x) => set(list.includes(x) ? list.filter((y) => y !== x) : [...list, x])
   return (
     <>
-      <span className="grid size-12 place-items-center rounded-2xl bg-copper-300/20 text-copper-600">
+      <span className="grid size-12 place-items-center rounded-2xl bg-copper-300/20 text-gold-600">
         <Bell className="size-6" />
       </span>
       <p className="mt-4 text-xl font-bold text-ink">بدك وقت أبكر أو مختلف؟</p>
@@ -204,7 +204,7 @@ export function WaitlistContent({ value, onSave }) {
               onClick={() => toggle(t, setT, x.id)}
               className={`flex flex-col items-center gap-1 rounded-2xl py-3 transition ${on ? 'bg-forest-800 text-white' : 'bg-sand-50 text-ink ring-1 ring-sage-200 hover:ring-copper-300'}`}
             >
-              <x.icon className={`size-5 ${on ? 'text-copper-300' : 'text-copper-600'}`} />
+              <x.icon className={`size-5 ${on ? 'text-copper-300' : 'text-gold-600'}`} />
               <span className="text-sm font-bold">{x.label}</span>
               <span className={`text-[10px] ${on ? 'text-white/60' : 'text-ink/45'}`} dir="ltr">
                 {x.sub}
@@ -286,7 +286,7 @@ export function ProfileContent({ onLogout }) {
         ))}
       </div>
       <p className="flex items-start gap-2 text-xs leading-6 text-ink/50">
-        <ShieldCheck className="mt-0.5 size-4 shrink-0 text-copper-600" /> بياناتك الصحية محمية، وما حدا بيشوفها غير الفريق المعالج.
+        <ShieldCheck className="mt-0.5 size-4 shrink-0 text-gold-600" /> بياناتك الصحية محمية، وما حدا بيشوفها غير الفريق المعالج.
       </p>
       <button
         type="button"

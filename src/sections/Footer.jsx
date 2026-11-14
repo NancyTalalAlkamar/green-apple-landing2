@@ -105,7 +105,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* معلومات العيادة والشعار */}
           <div>
-            <img src="/images/logo-full.png" alt="Green Apple — The Art of Health & Beauty" className="h-20 w-auto" />
+            <img src="/images/logo-full.svg" alt="Green Apple — The Art of Health & Beauty" className="h-28 w-auto" />
             <p className="mt-5 max-w-xs text-sm leading-7 text-white/75">{f.about}</p>
           </div>
 

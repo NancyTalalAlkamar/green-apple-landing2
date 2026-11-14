@@ -94,8 +94,8 @@ export const BADGES = [
 ]
 
 export const PACKAGES = [
-  { id: 'main', name: 'برنامج التنحيف · المرحلة 1', used: 12, total: 39, color: '#8c4724' },
-  { id: 'laser', name: 'ليزر · منطقتين', used: 2, total: 6, color: '#2f5240' },
+  { id: 'main', name: 'برنامج التنحيف · المرحلة 1', used: 12, total: 39, color: '#a8766a' },
+  { id: 'laser', name: 'ليزر · منطقتين', used: 2, total: 6, color: '#6b645e' },
 ]
 
 export const PAYMENTS = {

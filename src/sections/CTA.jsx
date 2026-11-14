@@ -174,7 +174,7 @@ export default function CTA() {
 
               <div className={`flex flex-col gap-4 ${isEn ? 'items-start text-left' : 'items-start text-right'}`}>
                 <p className="text-sm text-white/85">{ctaData.note}</p>
-                <Button href={bookingUrl(isEn ? 'en' : 'ar')} target="_blank" rel="noreferrer" size="lg">
+                <Button href={bookingUrl(isEn ? 'en' : 'ar')} target="_blank" rel="noreferrer" variant="nude" size="lg">
                   {ctaData.button}
                 </Button>
               </div>

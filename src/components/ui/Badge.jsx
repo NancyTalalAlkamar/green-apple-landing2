@@ -8,7 +8,7 @@ export default function Badge({ children, tone = 'light', className = '' }) {
     <span
       className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium ${tones[tone]} ${className}`}
     >
-      <span className="size-1.5 rounded-full bg-copper-600" />
+      <span className="size-1.5 rounded-full bg-apple" />
       {children}
     </span>
   )

@@ -6,6 +6,7 @@ const variants = {
   light: 'bg-white text-ink hover:bg-sage-50 shadow-sm',
   outline: 'border border-sage-200 bg-white text-ink hover:border-forest-600',
   ghost: 'border border-white/25 text-white hover:bg-white/10',
+  nude: 'bg-copper-300 text-forest-900 hover:bg-white shadow-lg shadow-black/10',
 }
 
 const sizes = {

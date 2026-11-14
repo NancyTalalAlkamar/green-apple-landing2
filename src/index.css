@@ -7,31 +7,41 @@ html {
 @theme {
   --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
 
-  /* Deep forest greens — dark sections, footer, headings */
-  --color-forest-950: #102219;
-  --color-forest-900: #14291f;
-  --color-forest-800: #193327;
-  --color-forest-700: #22402f;
-  --color-forest-600: #2f5240;
+  /* ▼ باليت "فحمي ونود" (تجربة على فرع new-logo) ▼ */
+  /* فحمي دافي — الأقسام الغامقة والفوتر والعناوين */
+  --color-forest-950: #1c1a19;
+  --color-forest-900: #2b2826;
+  --color-forest-800: #3a3633;
+  --color-forest-700: #4d4844;
+  --color-forest-600: #6b645e;
 
-  /* Copper / cinnamon — primary CTA + accent words */
-  --color-copper-700: #763a1c;
-  --color-copper-600: #8c4724;
-  --color-copper-500: #a4582f;
-  --color-copper-300: #d9a06a; /* light accent on dark backgrounds */
+  /* الأزرار الأساسية — فحمي (كتابة بيضا) */
+  --color-copper-700: #1c1a19;
+  --color-copper-600: #2b2826;
+  --color-copper-500: #c99a8b; /* وردي ترابي */
+  /* نود — للتمييز على الخلفيات الغامقة وأرقام الخطوات والأزرار الثانوية */
+  --color-copper-300: #e8d3c6;
 
-  /* Soft sage surfaces */
-  --color-sage-50: #f4f7f5;
-  --color-sage-100: #eaf0ec;
-  --color-sage-200: #dbe5de;
+  /* وردي ترابي — الكلمات المميزة بالعناوين والأيقونات */
+  --color-gold-700: #8a5d52;
+  --color-gold-600: #a8766a;
+  --color-gold-500: #c99a8b;
 
-  /* Warm sand — results / booking backgrounds */
-  --color-sand-50: #faf6f1;
-  --color-sand-100: #f3ebe1;
-  --color-sand-200: #e8d9c6;
+  /* تفاحي — لمسة صغيرة بس (نقاط الشارات) */
+  --color-apple: #8cc63f;
 
-  --color-ink: #1b2a22;
-  --color-muted: #5d6a62;
+  /* رمادي دافي فاتح — حدود وخلفيات هادية */
+  --color-sage-50: #f9f7f6;
+  --color-sage-100: #f3efed;
+  --color-sage-200: #e7e0dc;
+
+  /* أبيض دافي ونود — خلفيات الأقسام والكروت */
+  --color-sand-50: #faf8f7;
+  --color-sand-100: #f4eeea;
+  --color-sand-200: #e8d3c6;
+
+  --color-ink: #1f1d1c;
+  --color-muted: #6b6460;
 
   --radius-4xl: 2rem;
   --radius-5xl: 2.5rem;
@@ -64,16 +74,6 @@ html {
     scroll-behavior: auto;
   }
 }
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
-}
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   overflow-x: hidden;
@@ -84,7 +84,7 @@ section {
   position: relative;
 }
 
-/* تأثير خطوط خفيفة أو إضاءات خافتة تفصل بين الأقسام إذا أردتِ فخامة إضافية */
+/* تأثير خطوط خفيفة أو إضاءات خافتة تفصل بين الأقسام */
 section::after {
   content: '';
   position: absolute;
@@ -94,26 +94,20 @@ section::after {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
 }
-html {
-  scroll-behavior: smooth;
-}
 
-body {
-  overflow-x: hidden;
-}
 /* تعريف حركة النبض والتوهج الخفيف */
 @keyframes subtlePulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(198, 110, 60, 0.2);
+    box-shadow: 0 0 0 0 rgba(201, 154, 139, 0.3);
   }
   70% {
     transform: scale(1.02);
-    box-shadow: 0 0 0 12px rgba(198, 110, 60, 0);
+    box-shadow: 0 0 0 12px rgba(201, 154, 139, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(198, 110, 60, 0);
+    box-shadow: 0 0 0 0 rgba(201, 154, 139, 0);
   }
 }
 

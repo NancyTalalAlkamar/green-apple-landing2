@@ -24,7 +24,7 @@ export default function MobileBar() {
       <div className="flex items-center gap-2">
         <a
           href={onContact ? '#inquiry' : '/contact'}
-          className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-copper-600 text-[15px] font-semibold text-white"
+          className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-copper-300 text-[15px] font-semibold text-forest-900"
         >
           <CalendarCheck className="size-5" />
           {onContact ? t.form : t.book}

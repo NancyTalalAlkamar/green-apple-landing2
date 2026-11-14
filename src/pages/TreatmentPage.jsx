@@ -137,7 +137,7 @@ function MobileBar({ label, waUrl }) {
           className="fixed inset-x-3 bottom-3 z-50 flex items-center gap-2 rounded-full border border-white/15 bg-forest-900/90 p-2 shadow-2xl shadow-black/20 backdrop-blur-xl lg:hidden"
           style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
         >
-          <Button href="#cta" size="md" className="flex-1">
+          <Button href="#cta" variant="nude" size="md" className="flex-1">
             {label}
           </Button>
           <a

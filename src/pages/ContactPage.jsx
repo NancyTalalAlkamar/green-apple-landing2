@@ -107,7 +107,7 @@ function WhatsAppPanel() {
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-3 border-b border-white/10 px-5 py-4">
         <span className="grid size-10 place-items-center rounded-full bg-white/10">
-          <img src="/images/logo-mark-white.png" alt="" className="h-5" />
+          <img src="/images/logo-mark-white.svg" alt="" className="h-5" />
         </span>
         <span className="flex-1">
           <span className="block text-sm font-semibold" dir="ltr">
@@ -405,7 +405,7 @@ function FormPanel() {
           ) : (
             <motion.div key="send" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
               <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-white/70">
-                <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-1 size-4 shrink-0 accent-[#d9a06a]" />
+                <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-1 size-4 shrink-0 accent-[#e8d3c6]" />
                 بوافق إنو العيادة تتواصل معي بخصوص استفساري، حسب سياسة الخصوصية.
               </label>
               <button
@@ -451,7 +451,7 @@ function RotatingWord() {
           animate={{ y: '0%', opacity: 1 }}
           exit={{ y: '-60%', opacity: 0 }}
           transition={{ duration: 0.45, ease: EASE }}
-          className="col-start-1 row-start-1 whitespace-nowrap text-copper-600"
+          className="col-start-1 row-start-1 whitespace-nowrap text-gold-600"
         >
           {WORDS[i]}
         </motion.span>
@@ -501,7 +501,7 @@ function Channels({ now }) {
                   className={`relative flex items-center gap-3 rounded-3xl p-3.5 text-start transition-colors ${on ? 'text-white' : 'border border-sage-200 bg-white text-ink hover:border-copper-300'}`}
                 >
                   {on && <motion.span layoutId="ch-pill" className="absolute inset-0 rounded-3xl bg-forest-800" transition={{ type: 'spring', stiffness: 380, damping: 32 }} />}
-                  <span className={`relative grid size-10 shrink-0 place-items-center rounded-2xl ${on ? 'bg-copper-300 text-forest-900' : 'bg-sand-100 text-copper-600'}`}>
+                  <span className={`relative grid size-10 shrink-0 place-items-center rounded-2xl ${on ? 'bg-copper-300 text-forest-900' : 'bg-sand-100 text-gold-600'}`}>
                     <c.icon className="size-5" />
                   </span>
                   <span className="relative min-w-0">
@@ -522,7 +522,7 @@ function Channels({ now }) {
           transition={{ duration: 0.9, delay: 0.2, ease: EASE }}
           className="relative h-[480px] overflow-hidden rounded-5xl bg-forest-900 text-white sm:h-[520px]"
         >
-          <div className="pointer-events-none absolute -top-32 size-[380px] rounded-full bg-[radial-gradient(circle,rgba(217,160,106,0.25),transparent_65%)] ltr:-left-32 rtl:-right-32" />
+          <div className="pointer-events-none absolute -top-32 size-[380px] rounded-full bg-[radial-gradient(circle,rgba(232,211,198,0.25),transparent_65%)] ltr:-left-32 rtl:-right-32" />
           <AnimatePresence mode="wait">
             <motion.div
               key={ch}
@@ -556,7 +556,7 @@ function Visit({ now }) {
           <div className="p-6 sm:p-10">
             <Badge>زورينا</Badge>
             <p className="mt-4 flex items-start gap-3 text-2xl font-bold text-ink sm:text-3xl">
-              <MapPin className="mt-1.5 size-6 shrink-0 text-copper-600" />
+              <MapPin className="mt-1.5 size-6 shrink-0 text-gold-600" />
               {ADDRESS}
             </p>
 

@@ -30,7 +30,7 @@ export function Notifications({ items, setItems }) {
         <div className="flex items-center justify-between border-b border-sage-200 px-5 py-4">
           <p className="font-bold text-ink">الإشعارات</p>
           {unread > 0 && (
-            <button type="button" onClick={() => setItems((l) => l.map((n) => ({ ...n, read: true })))} className="text-xs font-semibold text-copper-600">
+            <button type="button" onClick={() => setItems((l) => l.map((n) => ({ ...n, read: true })))} className="text-xs font-semibold text-gold-600">
               علّمي الكل كمقروء
             </button>
           )}
@@ -116,7 +116,7 @@ export function Sidebar({ tab, setTab, frozen }) {
   return (
     <aside className="sticky top-0 hidden h-svh w-72 shrink-0 flex-col bg-forest-950 p-6 text-white lg:flex">
       <a href="/" className="flex items-center gap-3">
-        <img src="/images/logo-mark-white.png" alt="" className="h-10" />
+        <img src="/images/logo-mark-white.svg" alt="" className="h-10" />
         <span>
           <span className="block font-bold">Green Apple</span>
           <span className="block text-[11px] text-white/50">منطقة المريضة</span>

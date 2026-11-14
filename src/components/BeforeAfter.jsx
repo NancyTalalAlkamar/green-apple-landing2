@@ -68,13 +68,13 @@ export default function BeforeAfter({ afterLabel, beforeLabel = 'قبل', caseKe
       className="relative h-full min-h-[380px] cursor-ew-resize touch-none overflow-hidden rounded-4xl bg-gradient-to-b from-sand-50 to-sand-200 select-none"
     >
       {/* BEFORE layer (right side) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#efe6da] to-[#e3d3bd]">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f5f0ed] to-[#ece4df]">
         <Silhouette k={1.3} fill="#d6c4ac" stroke="#c2ab8f" />
       </div>
 
       {/* AFTER layer (left side), clipped by the handle */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-[#f3ebe1] to-[#eadbc8]"
+        className="absolute inset-0 bg-gradient-to-b from-[#f2ece8] to-[#f1ebe7]"
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <AnimatePresence mode="wait">

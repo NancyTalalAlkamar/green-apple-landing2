@@ -27,7 +27,7 @@ function Overlay({ c }) {
           animate={{ top: ['8%', '80%', '8%'] }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <span className="absolute inset-x-0 top-1/2 h-px bg-copper-300 shadow-[0_0_18px_4px_rgba(217,160,106,0.6)]" />
+          <span className="absolute inset-x-0 top-1/2 h-px bg-copper-300 shadow-[0_0_18px_4px_rgba(232,211,198,0.6)]" />
         </motion.div>
         {/* نقاط قياس بتضوي */}
         {[
@@ -39,7 +39,7 @@ function Overlay({ c }) {
             key={pos}
             className={`absolute ${pos} size-3 rounded-full bg-copper-300`}
             initial={{ scale: 0 }}
-            animate={{ scale: [0, 1, 1], boxShadow: ['0 0 0 0 rgba(217,160,106,.6)', '0 0 0 14px rgba(217,160,106,0)', '0 0 0 0 rgba(217,160,106,0)'] }}
+            animate={{ scale: [0, 1, 1], boxShadow: ['0 0 0 0 rgba(232,211,198,.6)', '0 0 0 14px rgba(232,211,198,0)', '0 0 0 0 rgba(232,211,198,0)'] }}
             transition={{ duration: 1.6, delay: d, repeat: Infinity, repeatDelay: 0.6 }}
           />
         ))}
@@ -60,7 +60,7 @@ function Overlay({ c }) {
               <div className="flex items-center justify-between text-xs font-medium text-ink/70">
                 <span>{r.label}</span>
                 <motion.span
-                  className="tabular-nums text-copper-700"
+                  className="tabular-nums text-gold-700"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2 + i * 0.15 }}
@@ -209,7 +209,7 @@ export default function Story({ a, isEn }) {
                   <motion.span
                     variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -10 } }}
                     transition={{ duration: 0.4, ease: EASE }}
-                    className="inline-block text-sm font-semibold text-copper-600 tabular-nums"
+                    className="inline-block text-sm font-semibold text-gold-600 tabular-nums"
                     dir="ltr"
                   >
                     0{active + 1} / 0{n}

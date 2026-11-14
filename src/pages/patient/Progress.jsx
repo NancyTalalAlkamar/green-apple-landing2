@@ -114,8 +114,8 @@ function MetricChart() {
       <svg viewBox={`0 0 ${W} ${H}`} className="mt-6 w-full">
         <defs>
           <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#d9a06a" stopOpacity="0.35" />
-            <stop offset="1" stopColor="#d9a06a" stopOpacity="0" />
+            <stop offset="0" stopColor="#e8d3c6" stopOpacity="0.35" />
+            <stop offset="1" stopColor="#e8d3c6" stopOpacity="0" />
           </linearGradient>
         </defs>
         {[0, 1, 2, 3].map((i) => (
@@ -125,7 +125,7 @@ function MetricChart() {
             x2={W - pad.x}
             y1={pad.top + (i / 3) * (H - pad.top - pad.bottom)}
             y2={pad.top + (i / 3) * (H - pad.top - pad.bottom)}
-            stroke="#f3ebe1"
+            stroke="#f2ece8"
           />
         ))}
         <motion.path
@@ -141,7 +141,7 @@ function MetricChart() {
           key={`l-${id}`}
           d={line}
           fill="none"
-          stroke="#8c4724"
+          stroke="#a8766a"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -156,7 +156,7 @@ function MetricChart() {
           y2={H - pad.bottom}
           animate={{ x1: pts[ai][0], x2: pts[ai][0] }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          stroke="#d9a06a"
+          stroke="#e8d3c6"
           strokeDasharray="4 4"
         />
         {pts.map(([x, y], i) => (
@@ -170,8 +170,8 @@ function MetricChart() {
             className="cursor-pointer"
           >
             <circle cx={x} cy={y} r="22" fill="transparent" />
-            <motion.circle cx={x} cy={y} animate={{ r: i === ai ? 8 : 5 }} fill={i === ai ? '#8c4724' : 'white'} stroke="#8c4724" strokeWidth="2.5" />
-            <text x={x} y={y - 16} textAnchor="middle" className={`text-[13px] font-bold ${i === ai ? 'fill-copper-600' : 'fill-ink/60'}`}>
+            <motion.circle cx={x} cy={y} animate={{ r: i === ai ? 8 : 5 }} fill={i === ai ? '#a8766a' : 'white'} stroke="#a8766a" strokeWidth="2.5" />
+            <text x={x} y={y - 16} textAnchor="middle" className={`text-[13px] font-bold ${i === ai ? 'fill-gold-600' : 'fill-ink/60'}`}>
               {m.values[i]}
             </text>
             <text x={x} y={H - 10} textAnchor="middle" className="fill-ink/45 text-[11px]">
@@ -225,15 +225,15 @@ function ScanCard() {
       <Eyebrow>مسح الجسم 3D</Eyebrow>
       <div className="relative mt-2 flex flex-1 items-center justify-center py-2">
         <svg viewBox="0 0 200 430" className="h-48 w-auto">
-          <path d={bodyPath(1.4)} fill="none" stroke="#dbe5de" strokeWidth="2" strokeDasharray="4 5" />
-          <circle cx="100" cy="30" r="24" fill="#e9d6bf" />
+          <path d={bodyPath(1.4)} fill="none" stroke="#e7e0dc" strokeWidth="2" strokeDasharray="4 5" />
+          <circle cx="100" cy="30" r="24" fill="#e8d3c6" />
           <motion.path
             initial={false}
             d={bodyPath(k)}
             animate={{ d: bodyPath(k) }}
             transition={{ duration: 0.6, ease: EASE }}
-            fill="#e9d6bf"
-            stroke="#b4683b"
+            fill="#e8d3c6"
+            stroke="#c99a8b"
             strokeWidth="1.5"
           />
           <motion.line
@@ -241,7 +241,7 @@ function ScanCard() {
             x2="180"
             y1="0"
             y2="0"
-            stroke="#d9a06a"
+            stroke="#e8d3c6"
             strokeWidth="2"
             animate={{ y1: [40, 420, 40], y2: [40, 420, 40] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
@@ -260,14 +260,14 @@ function ScanCard() {
         max={vals.length - 1}
         value={i}
         onChange={(e) => setI(Number(e.target.value))}
-        className="w-full accent-[#8c4724]"
+        className="w-full accent-[#a8766a]"
         aria-label="اختاري المسح"
       />
       <div className="mt-4 flex items-center justify-between gap-2 rounded-2xl bg-sand-50 px-4 py-3 text-xs">
         <span className="text-ink/60">
           المسح الجاي بعد <b className="text-ink">{nextScan} يوم</b>
         </span>
-        <a href="#" className="font-semibold text-copper-600">
+        <a href="#" className="font-semibold text-gold-600">
           النتيجة الكاملة
         </a>
       </div>
@@ -313,7 +313,7 @@ function BadgesCard() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
-          className={`mt-4 flex items-center gap-2 rounded-2xl px-4 py-3 text-sm ${b0.earned ? 'bg-copper-300/15 text-copper-700' : 'bg-sand-50 text-ink/60'}`}
+          className={`mt-4 flex items-center gap-2 rounded-2xl px-4 py-3 text-sm ${b0.earned ? 'bg-copper-300/15 text-gold-700' : 'bg-sand-50 text-ink/60'}`}
         >
           {b0.earned ? <Sparkles className="size-4 shrink-0" /> : <Lock className="size-4 shrink-0" />}
           {b0.how}

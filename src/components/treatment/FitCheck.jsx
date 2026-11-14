@@ -17,7 +17,7 @@ function Ring({ value, total, label }) {
           cy="55"
           r={r}
           fill="none"
-          stroke="#d9a06a"
+          stroke="#e8d3c6"
           strokeWidth="9"
           strokeLinecap="round"
           strokeDasharray={c}
@@ -106,7 +106,7 @@ export default function FitCheck({ f, waUrl, isEn }) {
               </ul>
 
               <p className="mt-8 flex items-start gap-2 text-xs leading-6 text-ink/55">
-                <ShieldCheck className="mt-0.5 size-4 shrink-0 text-copper-600" />
+                <ShieldCheck className="mt-0.5 size-4 shrink-0 text-gold-600" />
                 {f.disclaimer}
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function FitCheck({ f, waUrl, isEn }) {
                     className="absolute inset-0 flex flex-col rounded-4xl bg-white p-7 shadow-xl shadow-forest-900/10 sm:p-9"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-semibold text-copper-600">
+                      <span className="text-xs font-semibold text-gold-600">
                         {f.stepLabel} <span dir="ltr">{step + 1}/{total + 1}</span>
                       </span>
                       <div className="flex gap-1">
@@ -165,7 +165,7 @@ export default function FitCheck({ f, waUrl, isEn }) {
                     transition={{ duration: 0.45, ease: EASE }}
                     className="absolute inset-0 flex flex-col rounded-4xl bg-white p-7 shadow-xl shadow-forest-900/10 sm:p-9"
                   >
-                    <span className="text-xs font-semibold text-copper-600">
+                    <span className="text-xs font-semibold text-gold-600">
                       {f.stepLabel} <span dir="ltr">{total + 1}/{total + 1}</span>
                     </span>
                     <p className="mt-4 text-2xl font-bold text-ink">{f.noTitle}</p>
@@ -179,7 +179,7 @@ export default function FitCheck({ f, waUrl, isEn }) {
                             aria-pressed={on}
                             onClick={() => setFlags((fl) => (on ? fl.filter((x) => x !== i) : [...fl, i]))}
                             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors ${
-                              on ? 'border-copper-600 bg-copper-600 text-white' : 'border-copper-300/60 text-copper-700 hover:bg-sand-50'
+                              on ? 'border-copper-600 bg-copper-600 text-white' : 'border-copper-300/60 text-gold-700 hover:bg-sand-50'
                             }`}
                           >
                             {on ? <Check className="size-3.5" /> : <span className="size-1.5 rounded-full bg-copper-300" />}
@@ -227,7 +227,7 @@ export default function FitCheck({ f, waUrl, isEn }) {
                           {f.talk}
                         </Button>
                       ) : (
-                        <Button href="#cta">{f.cta}</Button>
+                        <Button href="#cta" variant="nude">{f.cta}</Button>
                       )}
                       <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white">
                         <RotateCcw className="size-4" />

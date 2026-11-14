@@ -28,8 +28,8 @@ const TEXT_START = SLIDE_TIME * 0.35
    2) ضبابية حقيقية (backdrop-blur) بتزيد تدريجياً من النص لتحت.
    3) ضباب لوني دافئ بتدرّج smoothstep، فما في أي حد ظاهر.
    كلها جوّا السلايد نفسه، فبتتحرك مع الصورة بدون ما نلمس الأنيميشن. */
-const MIST_RGB = '250,246,241'
-const SCRIM_RGB = '20,41,31'
+const MIST_RGB = '250,248,247'
+const SCRIM_RGB = '43,40,38'
 
 const SCRIM_TOP = `linear-gradient(180deg,
   rgba(${SCRIM_RGB},0.45) 0%, rgba(${SCRIM_RGB},0.42) 12%, rgba(${SCRIM_RGB},0.35) 25%,
@@ -222,7 +222,7 @@ function OpeningTitle({ lines }) {
       {lines.map((line, i) => (
         <motion.span
           key={line}
-          className={`block pb-[0.1em] ${i === lines.length - 1 ? 'text-copper-600' : 'text-forest-900'}`}
+          className={`block pb-[0.1em] ${i === lines.length - 1 ? 'text-gold-600' : 'text-forest-900'}`}
           initial={{ clipPath: 'inset(-10% 0% -10% 100%)', filter: 'blur(8px)', opacity: 0.4 }}
           animate={{ clipPath: 'inset(-10% 0% -10% 0%)', filter: 'blur(0px)', opacity: 1 }}
           transition={{ duration: 0.9, ease: SOFT, delay: TEXT_START + i * 0.12 }}
@@ -312,13 +312,13 @@ function Slide({ data, dir, isEn, lang, imgX, imgY, bgY, contentY, contentOpacit
       />
 
       {/* إضاءات خفيفة جانبية لتعزيز التناغم */}
-      <div className="absolute -left-20 top-1/3 size-[400px] rounded-full bg-[radial-gradient(circle,_rgba(245,121,3,0.12)_0%,_transparent_70%)] blur-3xl pointer-events-none z-10" />
-      <div className="absolute -right-20 top-1/3 size-[400px] rounded-full bg-[radial-gradient(circle,_rgba(245,121,3,0.12)_0%,_transparent_70%)] blur-3xl pointer-events-none z-10" />
+      <div className="absolute -left-20 top-1/3 size-[400px] rounded-full bg-[radial-gradient(circle,_rgba(201,154,139,0.12)_0%,_transparent_70%)] blur-3xl pointer-events-none z-10" />
+      <div className="absolute -right-20 top-1/3 size-[400px] rounded-full bg-[radial-gradient(circle,_rgba(201,154,139,0.12)_0%,_transparent_70%)] blur-3xl pointer-events-none z-10" />
 
       {dir !== 0 && (
         <motion.div
           variants={edge}
-          className={`absolute inset-y-0 w-1.5 bg-copper-500 shadow-[0_0_50px_16px_rgba(164,88,47,0.6)] ${
+          className={`absolute inset-y-0 w-1.5 bg-copper-500 shadow-[0_0_50px_16px_rgba(201,154,139,0.6)] ${
             isEn ? (dir > 0 ? 'left-0' : 'right-0') : (dir > 0 ? 'right-0' : 'left-0')
           }`}
         />
@@ -333,8 +333,8 @@ function Slide({ data, dir, isEn, lang, imgX, imgY, bgY, contentY, contentOpacit
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-copper-600/30 bg-white/90 px-5 py-2 text-xs font-bold text-forest-900 shadow-md backdrop-blur"
         >
           <span className="relative flex size-2.5">
-            <span className="absolute inset-0 animate-ping rounded-full bg-copper-600/60" />
-            <span className="relative size-2.5 rounded-full bg-copper-600" />
+            <span className="absolute inset-0 animate-ping rounded-full bg-apple/60" />
+            <span className="relative size-2.5 rounded-full bg-apple" />
           </span>
           {data.eyebrow}
         </motion.span>

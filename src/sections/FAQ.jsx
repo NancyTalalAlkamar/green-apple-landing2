@@ -110,7 +110,7 @@ function Item({ q, a, open, onToggle, isEn }) {
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.35, ease: EASE }}
           className={`grid size-7 shrink-0 place-items-center rounded-full ${
-            open ? 'bg-forest-800 text-white' : 'bg-sage-100 text-copper-600'
+            open ? 'bg-forest-800 text-white' : 'bg-sage-100 text-gold-600'
           }`}
         >
           {open ? <Minus className="size-3.5" /> : <Plus className="size-3.5" />}

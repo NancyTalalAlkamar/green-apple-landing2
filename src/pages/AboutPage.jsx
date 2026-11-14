@@ -69,7 +69,7 @@ function FloorPlan({ active, onPick }) {
     <svg viewBox="0 0 600 400" className="h-auto w-full" role="img" aria-label="خريطة العيادة">
       {/* الممر */}
       <rect x="300" y="20" width="20" height="360" rx="10" fill="rgba(255,255,255,0.04)" />
-      <path d="M310 30 L310 370" stroke="rgba(217,160,106,0.35)" strokeWidth="2" strokeDasharray="2 10" strokeLinecap="round" />
+      <path d="M310 30 L310 370" stroke="rgba(232,211,198,0.35)" strokeWidth="2" strokeDasharray="2 10" strokeLinecap="round" />
 
       {ROOMS.map((room, i) => {
         const on = i === active
@@ -83,8 +83,8 @@ function FloorPlan({ active, onPick }) {
               height={h}
               rx="18"
               animate={{
-                fill: on ? 'rgba(217,160,106,0.22)' : 'rgba(255,255,255,0.05)',
-                stroke: on ? '#d9a06a' : 'rgba(255,255,255,0.18)',
+                fill: on ? 'rgba(232,211,198,0.22)' : 'rgba(255,255,255,0.05)',
+                stroke: on ? '#e8d3c6' : 'rgba(255,255,255,0.18)',
               }}
               strokeWidth={on ? 2.5 : 1.5}
               transition={{ duration: 0.4 }}
@@ -102,20 +102,20 @@ function FloorPlan({ active, onPick }) {
                     width={74}
                     height={80}
                     rx="10"
-                    animate={{ fill: on ? 'rgba(217,160,106,0.35)' : 'rgba(255,255,255,0.06)' }}
+                    animate={{ fill: on ? 'rgba(232,211,198,0.35)' : 'rgba(255,255,255,0.06)' }}
                     transition={{ duration: 0.35, delay: on ? k * 0.08 : 0 }}
                   />
                 )
               })}
             {/* باب */}
-            <rect x={room.id === 'rooms' || room.id === 'laser' ? x + w - 4 : x - 4} y={y + h / 2 - 14} width="8" height="28" rx="4" fill="#14291f" />
+            <rect x={room.id === 'rooms' || room.id === 'laser' ? x + w - 4 : x - 4} y={y + h / 2 - 14} width="8" height="28" rx="4" fill="#2b2826" />
             <text
               x={x + w - 16}
               y={y + 30}
               textAnchor="start"
               direction="rtl"
               className="select-none"
-              style={{ fontSize: 17, fontWeight: 700, fill: on ? '#f3e2c8' : 'rgba(255,255,255,0.7)' }}
+              style={{ fontSize: 17, fontWeight: 700, fill: on ? '#e8d3c6' : 'rgba(255,255,255,0.7)' }}
             >
               {room.name}
             </text>
@@ -128,14 +128,14 @@ function FloorPlan({ active, onPick }) {
         initial={false}
         animate={{ cx: c.cx, cy: c.cy, r: [14, 32], opacity: [0.7, 0] }}
         transition={{ cx: { type: 'spring', stiffness: 70, damping: 16 }, cy: { type: 'spring', stiffness: 70, damping: 16 }, r: { duration: 1.4, repeat: Infinity }, opacity: { duration: 1.4, repeat: Infinity } }}
-        fill="rgba(217,160,106,0.45)"
+        fill="rgba(232,211,198,0.45)"
       />
       <motion.circle
         initial={false}
         animate={{ cx: c.cx, cy: c.cy }}
         transition={{ type: 'spring', stiffness: 70, damping: 16 }}
         r="10"
-        fill="#d9a06a"
+        fill="#e8d3c6"
         stroke="#fff"
         strokeWidth="3"
       />
@@ -176,7 +176,7 @@ function Tour() {
               transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
               className="mt-4 text-4xl leading-[1.15] font-bold text-ink sm:text-6xl"
             >
-              اتفضلي، <span className="text-copper-600">ادخلي عنا.</span>
+              اتفضلي، <span className="text-gold-600">ادخلي عنا.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 14 }}
@@ -188,7 +188,7 @@ function Tour() {
             </motion.p>
           </div>
           <div className="flex items-center gap-2 text-sm text-ink/60">
-            <MapPin className="size-4 text-copper-600" /> سخنين
+            <MapPin className="size-4 text-gold-600" /> سخنين
           </div>
         </div>
 
@@ -285,7 +285,7 @@ function Tour() {
 /* ═════════ 2. شو بيصير بالموعد: محاكي البلوك ═════════ */
 const STATIONS = ['نحت', 'شد', 'سيلوليت', 'تصريف']
 const PEOPLE = [
-  { label: 'إنتِ', color: '#d9a06a', you: true },
+  { label: 'إنتِ', color: '#e8d3c6', you: true },
   { label: 'س', color: '#9bb8a6' },
   { label: 'ر', color: '#c9b79c' },
   { label: 'م', color: '#7fa08c' },
@@ -319,7 +319,7 @@ function BlockSim() {
         <div>
           <Badge>كيف بيكون موعدك</Badge>
           <h2 className="mt-4 text-3xl leading-tight font-bold text-ink sm:text-5xl">
-            موعد واحد، <span className="text-copper-600">كذا جهاز</span>
+            موعد واحد، <span className="text-gold-600">كذا جهاز</span>
           </h2>
           <p className="mt-4 max-w-lg text-base leading-8 text-ink/70 sm:text-lg">
             منحجزلك موعد من ساعتين لثلاث ساعات، معك 3 نساء كحد أقصى. كل وحدة بتتنقّل بين الأجهزة حسب خطتها، بالدور، ومن غير ما حدا يستنّى.
@@ -347,15 +347,15 @@ function BlockSim() {
 
         <div className="relative mx-auto size-[320px] sm:size-[380px]">
           <svg viewBox="0 0 320 320" className="absolute inset-0 size-full">
-            <circle cx="160" cy="160" r={R} fill="none" stroke="#dbe5de" strokeWidth="2" strokeDasharray="3 8" />
+            <circle cx="160" cy="160" r={R} fill="none" stroke="#e7e0dc" strokeWidth="2" strokeDasharray="3 8" />
             {/* عدّاد الوقت بالنص */}
-            <circle cx="160" cy="160" r="58" fill="#1a3328" />
+            <circle cx="160" cy="160" r="58" fill="#2b2826" />
             <motion.circle
               cx="160"
               cy="160"
               r="58"
               fill="none"
-              stroke="#d9a06a"
+              stroke="#e8d3c6"
               strokeWidth="5"
               strokeLinecap="round"
               transform="rotate(-90 160 160)"
@@ -450,7 +450,7 @@ function ScanSection() {
                   rx={m.rx}
                   ry="8"
                   fill="none"
-                  stroke="#d9a06a"
+                  stroke="#e8d3c6"
                   strokeWidth="2"
                   strokeDasharray="4 5"
                   initial={{ opacity: 0.25 }}
@@ -463,12 +463,12 @@ function ScanSection() {
                 cx="110"
                 rx="70"
                 ry="12"
-                fill="rgba(217,160,106,0.15)"
-                stroke="#d9a06a"
+                fill="rgba(232,211,198,0.15)"
+                stroke="#e8d3c6"
                 strokeWidth="2.5"
                 animate={{ cy: [20, 300, 20] }}
                 transition={{ duration: 6.4, repeat: Infinity, ease: 'easeInOut' }}
-                style={{ filter: 'drop-shadow(0 0 8px rgba(217,160,106,0.8))' }}
+                style={{ filter: 'drop-shadow(0 0 8px rgba(232,211,198,0.8))' }}
               />
             </svg>
             {MARKS.map((m, i) => (
@@ -506,7 +506,7 @@ function ScanSection() {
                 {[0, 3, 6, 9, 12].map((w, i) => (
                   <motion.span
                     key={w}
-                    animate={{ scale: i === week ? 1.25 : 1, backgroundColor: i <= week ? '#d9a06a' : '#1f3d2f' }}
+                    animate={{ scale: i === week ? 1.25 : 1, backgroundColor: i <= week ? '#e8d3c6' : '#34302d' }}
                     className="relative z-10 grid size-9 place-items-center rounded-full border-2 border-copper-300/60 text-[11px] font-bold text-forest-900"
                   >
                     <ScanLine className={`size-4 ${i <= week ? 'text-forest-900' : 'text-white/50'}`} />
@@ -543,11 +543,11 @@ function LanguageBand() {
       <div className="container-page">
         <div className="flex flex-col items-start gap-6 rounded-5xl border border-sage-200 bg-white px-6 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-12">
           <div className="flex items-center gap-4">
-            <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-sand-100 text-copper-600">
+            <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-sand-100 text-gold-600">
               <Languages className="size-6" />
             </span>
             <div>
-              <p className="text-sm font-semibold text-copper-600">منحكي لغتك</p>
+              <p className="text-sm font-semibold text-gold-600">منحكي لغتك</p>
               <p className="mt-1 text-ink/70">الفريق والرسائل والمتابعة بالعربي والعبري.</p>
             </div>
           </div>
@@ -578,7 +578,7 @@ function Ending() {
     <section className="pb-16 sm:pb-20">
       <div className="container-page">
         <div className="relative overflow-hidden rounded-5xl bg-forest-900 px-6 pt-10 pb-24 text-white sm:px-12 sm:pt-12 sm:pb-24">
-          <div className="pointer-events-none absolute -top-40 size-[460px] rounded-full bg-[radial-gradient(circle,rgba(217,160,106,0.35),transparent_65%)] ltr:-left-40 rtl:-right-40" />
+          <div className="pointer-events-none absolute -top-40 size-[460px] rounded-full bg-[radial-gradient(circle,rgba(232,211,198,0.35),transparent_65%)] ltr:-left-40 rtl:-right-40" />
           <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <h2 className="text-5xl leading-[1.1] font-bold sm:text-7xl">

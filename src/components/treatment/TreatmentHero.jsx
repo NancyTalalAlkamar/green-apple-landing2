@@ -37,7 +37,7 @@ function ScanLine() {
   return (
     <motion.div
       aria-hidden
-      className="absolute inset-x-0 h-px bg-copper-300/90 shadow-[0_0_24px_6px_rgba(217,160,106,0.5)]"
+      className="absolute inset-x-0 h-px bg-copper-300/90 shadow-[0_0_24px_6px_rgba(232,211,198,0.5)]"
       animate={{ top: ['14%', '70%', '14%'] }}
       transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
     />
@@ -58,7 +58,7 @@ export default function TreatmentHero({ d, isEn, waUrl }) {
         {d.breadcrumb.map((c, i) => (
           <li key={c} className="flex items-center gap-1.5">
             {i < d.breadcrumb.length - 1 ? (
-              <a href={i === 0 ? '/' : '/#services'} className="transition-colors hover:text-copper-600">
+              <a href={i === 0 ? '/' : '/#services'} className="transition-colors hover:text-gold-600">
                 {c}
               </a>
             ) : (
@@ -118,7 +118,7 @@ export default function TreatmentHero({ d, isEn, waUrl }) {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45, ease: EASE }}
-            className="mt-1 text-4xl font-semibold text-copper-600"
+            className="mt-1 text-4xl font-semibold text-gold-600"
           >
             {d.accent}
           </motion.p>

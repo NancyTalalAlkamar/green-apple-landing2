@@ -44,7 +44,7 @@ function StatusChips({ strikes, frozen, goHelp, goProgress }) {
         </span>
         مخالفات {strikes}/{POLICY.maxStrikes}
       </button>
-      {!frozen && <span className="rounded-full bg-copper-300/20 px-3 py-1.5 text-xs font-semibold text-copper-700">🌟 شهر التزام</span>}
+      {!frozen && <span className="rounded-full bg-copper-300/20 px-3 py-1.5 text-xs font-semibold text-gold-700">🌟 شهر التزام</span>}
     </div>
   )
 }
@@ -61,20 +61,20 @@ function PrepCard({ appt }) {
   }
   return (
     <Card className="relative flex h-full flex-col p-6">
-      {burst > 0 && <Burst key={burst} colors={['#8c4724', '#193327']} />}
+      {burst > 0 && <Burst key={burst} colors={['#a8766a', '#3a3633']} />}
       <div className="flex items-start justify-between gap-3">
         <div>
           <Eyebrow>قبل جلسة {fmtWeekday(appt.date)}</Eyebrow>
           <p className="mt-1 text-lg font-bold text-ink">جهّزي حالك</p>
         </div>
         <span className="relative grid place-items-center">
-          <Ring value={count} total={PREP.length} size={46} stroke={4} color={all ? '#193327' : '#8c4724'} track="#f3ebe1" />
+          <Ring value={count} total={PREP.length} size={46} stroke={4} color={all ? '#3a3633' : '#a8766a'} track="#f2ece8" />
           <span className="absolute text-[11px] font-bold text-ink">{all ? <Check className="size-4 text-forest-800" /> : `${count}/${PREP.length}`}</span>
         </span>
       </div>
       {appt.scan && (
         <p className="mt-3 flex items-center gap-2 rounded-2xl bg-sand-50 px-3 py-2 text-xs text-ink/70">
-          <ScanLine className="size-4 text-copper-600" /> جلستك فيها مسح 3D · احسبي 5 دقايق زيادة
+          <ScanLine className="size-4 text-gold-600" /> جلستك فيها مسح 3D · احسبي 5 دقايق زيادة
         </p>
       )}
       <ul className="mt-3 space-y-1">
@@ -87,7 +87,7 @@ function PrepCard({ appt }) {
               <motion.span
                 whileHover={{ rotate: -8 }}
                 animate={{ scale: done[i] ? [1, 1.25, 1] : 1 }}
-                className={`grid size-8 shrink-0 place-items-center rounded-xl transition-colors peer-focus-visible:ring-4 peer-focus-visible:ring-copper-300/30 ${done[i] ? 'bg-forest-800 text-white' : 'bg-sand-100 text-copper-600'}`}
+                className={`grid size-8 shrink-0 place-items-center rounded-xl transition-colors peer-focus-visible:ring-4 peer-focus-visible:ring-copper-300/30 ${done[i] ? 'bg-forest-800 text-white' : 'bg-sand-100 text-gold-600'}`}
               >
                 {done[i] ? <Check className="size-4" /> : <t.icon className="size-4" />}
               </motion.span>
@@ -123,8 +123,8 @@ function Sparkline({ values, w = 220, h = 64 }) {
     <svg viewBox={`0 0 ${w} ${h}`} className="h-16 w-full overflow-visible">
       <defs>
         <linearGradient id="spark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#d9a06a" stopOpacity="0.45" />
-          <stop offset="1" stopColor="#d9a06a" stopOpacity="0" />
+          <stop offset="0" stopColor="#e8d3c6" stopOpacity="0.45" />
+          <stop offset="1" stopColor="#e8d3c6" stopOpacity="0" />
         </linearGradient>
       </defs>
       <motion.path
@@ -137,7 +137,7 @@ function Sparkline({ values, w = 220, h = 64 }) {
       <motion.path
         d={d}
         fill="none"
-        stroke="#8c4724"
+        stroke="#a8766a"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -145,7 +145,7 @@ function Sparkline({ values, w = 220, h = 64 }) {
         animate={{ pathLength: 1 }}
         transition={{ duration: 1.2, ease: EASE }}
       />
-      <circle cx={flipped[flipped.length - 1][0]} cy={flipped[flipped.length - 1][1]} r="4.5" fill="#8c4724" stroke="white" strokeWidth="2" />
+      <circle cx={flipped[flipped.length - 1][0]} cy={flipped[flipped.length - 1][1]} r="4.5" fill="#a8766a" stroke="white" strokeWidth="2" />
     </svg>
   )
 }
@@ -178,7 +178,7 @@ function ProgressSnapshot({ goProgress }) {
           />
         </div>
       </div>
-      <button type="button" onClick={goProgress} className="mt-auto flex items-center gap-1 pt-4 text-sm font-semibold text-copper-600">
+      <button type="button" onClick={goProgress} className="mt-auto flex items-center gap-1 pt-4 text-sm font-semibold text-gold-600">
         كل التفاصيل <ChevronLeft className="size-4" />
       </button>
     </Card>
@@ -206,7 +206,7 @@ function UpcomingMini({ appts, goAppts }) {
             <span className="min-w-0 flex-1">
               <span className="flex items-center gap-1.5 font-semibold text-ink">
                 {a.title}
-                {a.scan && <ScanLine className="size-3.5 text-copper-600" />}
+                {a.scan && <ScanLine className="size-3.5 text-gold-600" />}
               </span>
               <span className="block text-xs text-ink/50">وصول {fmtTime(a.date)}</span>
             </span>
@@ -214,7 +214,7 @@ function UpcomingMini({ appts, goAppts }) {
           </motion.li>
         ))}
       </ul>
-      <button type="button" onClick={goAppts} className="mt-auto flex items-center gap-1 pt-4 text-sm font-semibold text-copper-600">
+      <button type="button" onClick={goAppts} className="mt-auto flex items-center gap-1 pt-4 text-sm font-semibold text-gold-600">
         كل المواعيد <ChevronLeft className="size-4" />
       </button>
     </Card>
@@ -303,7 +303,7 @@ export function HomePage({ ctx }) {
             transition={new Date().getHours() < 17 ? { duration: 12, repeat: Infinity, ease: 'linear' } : { duration: 3, repeat: Infinity }}
             className="inline-grid"
           >
-            {new Date().getHours() < 17 ? <Sun className="size-4 text-copper-500" /> : <Moon className="size-4 text-copper-500" />}
+            {new Date().getHours() < 17 ? <Sun className="size-4 text-gold-500" /> : <Moon className="size-4 text-gold-500" />}
           </motion.span>
           {greeting} · {fmtDay(new Date())}
         </p>

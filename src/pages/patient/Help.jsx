@@ -41,7 +41,7 @@ function PolicyVisual({ strikes }) {
           { icon: MessageCircle, t: 'ظرف طارئ؟', d: 'احكي معنا، منتفهّم الحالات الطارئة.' },
         ].map((x) => (
           <div key={x.t} className="rounded-3xl bg-sand-50 p-4">
-            <x.icon className="size-5 text-copper-600" />
+            <x.icon className="size-5 text-gold-600" />
             <p className="mt-2 font-bold text-ink">{x.t}</p>
             <p className="mt-1 text-xs leading-5 text-ink/55">{x.d}</p>
           </div>
@@ -125,7 +125,7 @@ export function HelpPage({ ctx }) {
           <ul className="mt-4 space-y-4">
             {AFTERCARE.map((t) => (
               <li key={t.title} className="flex gap-3">
-                <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-sand-100 text-copper-600">
+                <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-sand-100 text-gold-600">
                   <t.icon className="size-5" />
                 </span>
                 <span>

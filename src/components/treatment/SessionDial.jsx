@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView, useMotionValue, useTransform, useAn
 import { EASE } from '../../lib/motion'
 import SectionHeading from '../ui/SectionHeading'
 
-const COLORS = ['#2f5240', '#22402f', '#8c4724', '#d9a06a']
+const COLORS = ['#6b645e', '#4d4844', '#a8766a', '#e8d3c6']
 const R = 120
 const C = 2 * Math.PI * R
 const STEP_SECONDS = 3.5 // قديش العقرب بيقضي بكل مرحلة
@@ -79,7 +79,7 @@ export default function SessionDial({ s }) {
                       y1={150 + r1 * Math.sin(a)}
                       x2={150 + r2 * Math.cos(a)}
                       y2={150 + r2 * Math.sin(a)}
-                      stroke="#1b2a22"
+                      stroke="#1f1d1c"
                       strokeOpacity={long ? 0.45 : 0.2}
                       strokeWidth={long ? 2 : 1}
                     />
@@ -117,8 +117,8 @@ export default function SessionDial({ s }) {
                 </g>
 
                 {/* العقرب */}
-                <motion.line x1="150" y1="150" x2={handX} y2={handY} stroke="#14291f" strokeWidth="3" strokeLinecap="round" />
-                <motion.circle cx={handX} cy={handY} r="6" fill="#14291f" stroke="#fff" strokeWidth="2" />
+                <motion.line x1="150" y1="150" x2={handX} y2={handY} stroke="#2b2826" strokeWidth="3" strokeLinecap="round" />
+                <motion.circle cx={handX} cy={handY} r="6" fill="#2b2826" stroke="#fff" strokeWidth="2" />
 
                 <circle cx="150" cy="150" r="64" fill="#fff" />
                 <AnimatePresence mode="wait">
@@ -129,10 +129,10 @@ export default function SessionDial({ s }) {
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <text x="150" y="150" textAnchor="middle" fontSize="22" fontWeight="700" fill="#14291f">
+                    <text x="150" y="150" textAnchor="middle" fontSize="22" fontWeight="700" fill="#2b2826">
                       {s.steps[active].time}
                     </text>
-                    <text x="150" y="174" textAnchor="middle" fontSize="11" fill="#5d6a62">
+                    <text x="150" y="174" textAnchor="middle" fontSize="11" fill="#6b6460">
                       {s.steps[active].title}
                     </text>
                   </motion.g>
@@ -148,7 +148,7 @@ export default function SessionDial({ s }) {
                   <span className="text-4xl font-bold text-forest-800 tabular-nums" dir="ltr">
                     ~{total}
                   </span>
-                  <span className="text-sm font-medium text-copper-600">{s.centerUnit}</span>
+                  <span className="text-sm font-medium text-gold-600">{s.centerUnit}</span>
                 </div>
               </div>
 
@@ -183,7 +183,7 @@ export default function SessionDial({ s }) {
                           )}
                           <span className="size-3 rounded-full" style={{ background: COLORS[i % COLORS.length] }} />
                         </span>
-                        <span className="text-xs font-semibold text-copper-700" dir="auto">
+                        <span className="text-xs font-semibold text-gold-700" dir="auto">
                           {st.time}
                         </span>
                       </div>

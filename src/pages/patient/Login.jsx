@@ -43,7 +43,7 @@ function ClinicPanel() {
           <span key={c} className={`absolute size-6 rounded-sm border-copper-300 ${c}`} />
         ))}
         <motion.span
-          className="absolute inset-x-0 h-px bg-copper-300 shadow-[0_0_18px_4px_rgba(217,160,106,0.55)]"
+          className="absolute inset-x-0 h-px bg-copper-300 shadow-[0_0_18px_4px_rgba(232,211,198,0.55)]"
           animate={{ top: ['4%', '96%', '4%'] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -51,7 +51,7 @@ function ClinicPanel() {
 
       <div className="relative flex h-full flex-col justify-end p-6 text-white lg:justify-between lg:p-10">
         <div className="hidden items-center gap-3 lg:flex">
-          <img src="/images/logo-mark-white.png" alt="" className="h-9 lg:h-11" />
+          <img src="/images/logo-mark-white.svg" alt="" className="h-9 lg:h-11" />
           <span className="text-[11px] tracking-[0.2em] text-white/60 uppercase">The Art of Health &amp; Beauty</span>
         </div>
 
@@ -163,7 +163,7 @@ export function Login({ onDone }) {
         {/* راس الصفحة: اللوغو والرجوع للموقع */}
         <div className="mb-8 flex items-center justify-between gap-3">
           <a href="/" className="flex items-center gap-2.5" aria-label="Green Apple · الرئيسية">
-            <img src="/images/logo-mark.png" alt="" className="h-9" />
+            <img src="/images/logo-mark.svg" alt="" className="h-9" />
             <span className="font-bold text-ink">Green Apple</span>
           </a>
           <a
@@ -232,7 +232,7 @@ export function Login({ onDone }) {
                   dir="ltr"
                 >
                   <span className="flex items-center gap-1.5 border-r border-sage-200 pr-3 text-sm font-semibold text-ink/60">
-                    <Phone className="size-4 text-copper-600" /> +972
+                    <Phone className="size-4 text-gold-600" /> +972
                   </span>
                   <input
                     id="pp-phone"
@@ -265,7 +265,7 @@ export function Login({ onDone }) {
                 {err && <p className="mt-2 text-xs text-red-700">{err}</p>}
 
                 <label className="mt-4 flex cursor-pointer items-center gap-2.5 text-sm text-ink/70">
-                  <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} className="size-4 accent-[#b4683b]" />
+                  <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} className="size-4 accent-[#c99a8b]" />
                   تذكّريني على هاد الجهاز
                 </label>
 
@@ -292,7 +292,7 @@ export function Login({ onDone }) {
                   initial={{ scale: 0, rotate: -20 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-                  className="grid size-14 place-items-center rounded-2xl bg-sand-100 text-copper-600"
+                  className="grid size-14 place-items-center rounded-2xl bg-sand-100 text-gold-600"
                 >
                   <MessageCircle className="size-6" />
                 </motion.span>
@@ -305,7 +305,7 @@ export function Login({ onDone }) {
                   <button
                     type="button"
                     onClick={() => setStep('phone')}
-                    className="inline-flex items-center gap-1 rounded-full bg-sand-50 px-2.5 py-1 text-xs font-semibold text-copper-600 ring-1 ring-sage-200"
+                    className="inline-flex items-center gap-1 rounded-full bg-sand-50 px-2.5 py-1 text-xs font-semibold text-gold-600 ring-1 ring-sage-200"
                   >
                     <Pencil className="size-3" /> تعديل
                   </button>
@@ -325,7 +325,7 @@ export function Login({ onDone }) {
                       onKeyDown={(e) => e.key === 'Backspace' && !c && i > 0 && refs.current[i - 1]?.focus()}
                       animate={{
                         scale: c ? [1, 1.12, 1] : 1,
-                        borderColor: c ? '#b4683b' : '#dbe5de',
+                        borderColor: c ? '#c99a8b' : '#e7e0dc',
                       }}
                       className="size-14 rounded-2xl border-2 bg-sand-50 text-center text-2xl font-bold text-ink outline-none focus:bg-white focus:ring-4 focus:ring-copper-300/25 sm:size-16"
                     />
@@ -337,13 +337,13 @@ export function Login({ onDone }) {
                   {wait > 0 ? (
                     <span className="flex items-center gap-2 text-ink/50">
                       <svg viewBox="0 0 20 20" className="size-5 -rotate-90">
-                        <circle cx="10" cy="10" r="8" fill="none" stroke="#efe6da" strokeWidth="2.5" />
+                        <circle cx="10" cy="10" r="8" fill="none" stroke="#f5f0ed" strokeWidth="2.5" />
                         <circle
                           cx="10"
                           cy="10"
                           r="8"
                           fill="none"
-                          stroke="#b4683b"
+                          stroke="#c99a8b"
                           strokeWidth="2.5"
                           strokeDasharray={50.3}
                           strokeDashoffset={50.3 * (1 - wait / 30)}
@@ -354,7 +354,7 @@ export function Login({ onDone }) {
                     </span>
                   ) : (
                     <>
-                      <button type="button" onClick={() => setWait(30)} className="flex items-center gap-1.5 font-semibold text-copper-600">
+                      <button type="button" onClick={() => setWait(30)} className="flex items-center gap-1.5 font-semibold text-gold-600">
                         <RefreshCw className="size-4" /> ابعتولي رمز جديد
                       </button>
                       <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 font-semibold text-forest-800">
@@ -377,7 +377,7 @@ export function Login({ onDone }) {
                     cy="40"
                     r="36"
                     fill="none"
-                    stroke="#b4683b"
+                    stroke="#c99a8b"
                     strokeWidth="4"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
@@ -386,7 +386,7 @@ export function Login({ onDone }) {
                   <motion.path
                     d="M25 41 l10 10 l20 -22"
                     fill="none"
-                    stroke="#14291f"
+                    stroke="#2b2826"
                     strokeWidth="5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -414,7 +414,7 @@ export function Login({ onDone }) {
         <div className="space-y-3 border-t border-sage-200 pt-5 text-sm">
           <p className="text-ink/60">
             لسا مش مسجّلة عنا؟{' '}
-            <a href="/contact" className="font-bold text-copper-600 hover:underline">
+            <a href="/contact" className="font-bold text-gold-600 hover:underline">
               احجزي استشارة أولى
             </a>
           </p>

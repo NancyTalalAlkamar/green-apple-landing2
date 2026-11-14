@@ -84,7 +84,7 @@ export default function ChatFAQ({ f, waUrl }) {
             {/* رأس المحادثة */}
             <div className="flex items-center gap-3 bg-forest-800 px-5 py-4">
               <span className="relative grid size-11 place-items-center rounded-full bg-forest-700">
-                <img src="/images/logo-mark-white.png" alt="" className="h-6 w-auto" />
+                <img src="/images/logo-mark-white.svg" alt="" className="h-6 w-auto" />
                 <span className="absolute bottom-0 size-3 rounded-full bg-[#3fbf6a] ring-2 ring-forest-800 ltr:right-0 rtl:left-0" />
               </span>
               <div>
@@ -101,7 +101,7 @@ export default function ChatFAQ({ f, waUrl }) {
               className="h-[420px] space-y-3 overflow-y-auto px-4 py-5 sm:h-[460px] sm:px-6"
               style={{
                 scrollbarWidth: 'thin',
-                backgroundImage: 'radial-gradient(rgba(31,61,47,0.06) 1px, transparent 1px)',
+                backgroundImage: 'radial-gradient(rgba(52,48,45,0.06) 1px, transparent 1px)',
                 backgroundSize: '18px 18px',
               }}
             >

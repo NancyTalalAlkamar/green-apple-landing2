@@ -17,7 +17,7 @@ function PackageRing({ p }) {
       className="relative grid shrink-0 place-items-center"
       aria-label="بدّلي بين الباقي والمستعمل"
     >
-      <Ring value={p.used} total={p.total} size={96} stroke={8} color={p.color} track="#f3ebe1" />
+      <Ring value={p.used} total={p.total} size={96} stroke={8} color={p.color} track="#f2ece8" />
       <AnimatePresence mode="wait">
         <motion.span
           key={used ? 'u' : 'r'}
@@ -65,7 +65,7 @@ export function PlanPage() {
               {[
                 ['المجموع', PAYMENTS.total, 'text-ink'],
                 ['دفعتي', PAYMENTS.paid, 'text-forest-800'],
-                ['باقي', remaining, 'text-copper-600'],
+                ['باقي', remaining, 'text-gold-600'],
               ].map(([l, v, c]) => (
                 <div key={l}>
                   <p className="text-xs text-ink/50">{l}</p>
