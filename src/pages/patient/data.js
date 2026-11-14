@@ -218,7 +218,7 @@ export const store = {
     try {
       localStorage.removeItem(KEY)
       sessionStorage.removeItem(KEY)
-      if (v) (remember ? localStorage : sessionStorage).setItem(KEY, '1')
+      if (v) sessionStorage.setItem(KEY, '1')
     } catch {
       /* ignore */
     }
