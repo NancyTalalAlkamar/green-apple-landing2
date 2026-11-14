@@ -203,18 +203,19 @@ export const NOTIFS = [
   { id: 4, icon: Receipt, title: 'وصل الدفع', text: 'استلمنا الدفعة 3. الوصل موجود بـ«الباقة والدفع».', time: 'قبل أسبوعين', read: true },
 ]
 
-/* تخزين الدخول للتجربة: "تذكّريني" بيحفظه حتى لو سكّرت المتصفح */
+/* تخزين الدخول للتجربة: بيضل بس طول ما التاب مفتوح،
+   فشاشة الدخول بتطلع كل مرة بتنفتح الصفحة من جديد */
 const KEY = 'ga-demo-login'
 
 export const store = {
   get: () => {
     try {
-      return localStorage.getItem(KEY) === '1' || sessionStorage.getItem(KEY) === '1'
+      return sessionStorage.getItem(KEY) === '1'
     } catch {
       return false
     }
   },
-  set: (v, remember = true) => {
+  set: (v) => {
     try {
       localStorage.removeItem(KEY)
       sessionStorage.removeItem(KEY)
